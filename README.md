@@ -6,7 +6,7 @@ Description:
 ## This is an <h2> tag
 ###### This is an <h6> tag
 
-![alt text](Pictures/hone.JPG)
+![alt text](Pictures/hone.png)
 
 
 
