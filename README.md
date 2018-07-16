@@ -6,7 +6,7 @@ Description:
 ## This is an <h2> tag
 ###### This is an <h6> tag
 
-![alt text](Screenshots/hone.JPG "this is what the page should look like")
+![alt text](Pictures/hone.JPG "this is what the page should look like")
 
 
 
