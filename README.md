@@ -15,9 +15,9 @@ Using purescript and possibly other language such as nodejs or solidity, it will
 
 #List of features:
 
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+- [x] Click handler with a input box and <del>tags</del> supported
+- [x] A database to pull users info from list supported)
+- [x] A card to store user's coins
+
 
 
