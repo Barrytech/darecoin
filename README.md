@@ -17,7 +17,7 @@ Using purescript and possibly other language such as nodejs or solidity, it will
 
 - [x] Click handler with a input box and <del>tags</del> supported
 - [x] A database to pull users info from list supported)
-- [x] A card to store user's coins
+- [x] A wallet to store user's coins
 
 
 
