@@ -9,7 +9,7 @@ Using purescript and possibly other language such as nodejs or solidity, it will
 ## This is an <h2> tag
 ###### This is an <h6> tag
 
-![alt text](Pictures/home.png)
+![alt text](Welcome.png)
 
 
 
