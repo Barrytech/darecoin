@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>DareChain/ Live Data Example - HTML5 jQuery Chart Plugin by jqChart</title>
+  <script src="node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<p> The price is: </p>
+<div class="priceDiv">
+
+</body>
+</html>
+
+<!-- CODE GOES BELOW -->
+
+<script>
+
+var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
+
+function updatePrice(){
+  $.ajax(url).done(function (res) {
+    // inside the function ^
+    var price = res[0].price_usd;
+    $("p").append( "<strong>" + price + "</strong>" );
+    console.log(price);
+  });
+
+  setTimeout(updatePrice, 5000);
+}
+
+$('document').ready(function(){
+
+  updatePrice();
+
+})
+
+</script>

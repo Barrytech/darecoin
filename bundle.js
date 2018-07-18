@@ -100,6 +100,9 @@
 	    Decrement.value = new Decrement();
 	    return Decrement;
 	})();
+	var somethingToPrint = function (n) {
+	    return "Hello there: " + Data_Show.show(Data_Show.showInt)(n);
+	};
 	var performAction = function (v) {
 	    return function (v1) {
 	        return function (v2) {
@@ -127,7 +130,7 @@
 	                    return $18;
 	                }));
 	            };
-	            throw new Error("Failed pattern match at Main line 42, column 1 - line 42, column 62: " + [ v.constructor.name, v1.constructor.name, v2.constructor.name ]);
+	            throw new Error("Failed pattern match at Main line 46, column 1 - line 46, column 62: " + [ v.constructor.name, v1.constructor.name, v2.constructor.name ]);
 	        };
 	    };
 	};
@@ -141,7 +144,7 @@
 	    return function (v) {
 	        return function (state) {
 	            return function (v1) {
-	                return [ React_DOM["p'"]([ React_DOM.text("Hello NewLab!\x0a"), React_DOM.text(displayState(state.counter)) ]), React_DOM["p'"]([ React_DOM.button([ React_DOM_Props.onClick(function (v2) {
+	                return [ React_DOM["p'"]([ React_DOM.text("Hello NewLab!\x0a"), React_DOM.text(displayState(state.counter)), React_DOM.text(somethingToPrint(state.counter)) ]), React_DOM["p'"]([ React_DOM.button([ React_DOM_Props.onClick(function (v2) {
 	                    return dispatch(Increment.value);
 	                }) ])([ React_DOM.text("Increment") ]), React_DOM.button([ React_DOM_Props.onClick(function (v2) {
 	                    return dispatch(Decrement.value);
@@ -164,6 +167,7 @@
 	    Increment: Increment,
 	    Decrement: Decrement,
 	    initialState: initialState,
+	    somethingToPrint: somethingToPrint,
 	    render: render,
 	    performAction: performAction,
 	    spec: spec,

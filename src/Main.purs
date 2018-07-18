@@ -27,10 +27,14 @@ type State = { counter :: Int }
 initialState :: State
 initialState = { counter: 0 }
 
+somethingToPrint :: Int -> String
+somethingToPrint n = "Hello there: " <> show n
+
 render :: forall a. T.Render State a Action
 render dispatch _ state _ =
   [ R.p' [ R.text "Hello NewLab!\n"
          , R.text $ displayState state.counter
+         , R.text $ somethingToPrint state.counter
          ]
   , R.p' [ R.button [ RP.onClick \_ -> dispatch Increment ]
                     [ R.text "Increment" ]
