@@ -1,6 +1,6 @@
 <<?php
 $url ="https://api.coinmarketcap.com/v1/ticker/ethereum/";
-$fgc = file_get_contents();
+$fgc = file_get_contents(url);
 $json = json_decode($fgc, true);
 
 $price = $jason("last");

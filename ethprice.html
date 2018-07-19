@@ -3,12 +3,43 @@
 <head>
   <title>DareChain/ Live Data Example - HTML5 jQuery Chart Plugin by jqChart</title>
   <script src="node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
+  <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+<p> </P>
 
-<p> The price is: </p>
-<div class="priceDiv">
+<div id="container">
+<table width:"100%" id="table">
+
+  <tr>
+    <th>Price:</th>
+    <th aligh="right" id="price">    bj  </th>
+
+  </tr>
+
+    <th>%Change</th>
+    <th aligh="right" id="change">      </th>
+
+  </tr>
+
+    <th>Daily:</th>
+    <th aligh="right" id="day">      </th>
+
+  </tr>
+
+    <th>Weekly:</th>
+    <th aligh="right" id="week">      </th>
+
+  </tr>
+
+    <th>Time and date:</th>
+    <th aligh="right" id="moment">      </th>
+
+  </tr>
+
+</table>
+</div>
 
 </body>
 </html>
@@ -16,24 +47,40 @@
 <!-- CODE GOES BELOW -->
 
 <script>
-
+/* global $ */
 var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
+
+function getTimeFromSeconds(timeInSecs){
+    // API returns in seconds, but Date needs milliseconds
+    // so we multiply by 1000 to get todays date as a string
+    return new Date(timeInSecs*1000).toDateString();
+}
 
 function updatePrice(){
   $.ajax(url).done(function (res) {
+
     // inside the function ^
     var price = res[0].price_usd;
-    $("p").append( "<strong>" + price + "</strong>" );
-    console.log(price);
+    var change = res[0].percent_change_1h;
+    var daychange = res[0].percent_change_24h;
+    var weekchange = res[0].percent_change_7d;
+
+    var dateAsString = getTimeFromSeconds(res[0].last_updated);
+
+    $("#price").html( "<strong>" + price + "</strong>" );
+    $("#change").html( "<strong>" + change + "</strong>" );
+    $("#moment").html( "<strong>" + dateAsString + "</strong>" );
+    $("#day").html( "<strong>" + daychange+ "</strong>" );
+    $("#week").html( "<strong>" + weekchange+ "</strong>" );
+
   });
 
+  // update every 5s
   setTimeout(updatePrice, 5000);
 }
 
 $('document').ready(function(){
-
   updatePrice();
-
 })
 
 </script>

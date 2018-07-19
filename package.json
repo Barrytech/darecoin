@@ -11,9 +11,10 @@
     "build": "pulp build && webpack --progress --colors"
   },
   "dependencies": {
+    "create-react-class": "^15.6.3",
+    "jquery": "^3.3.1",
     "react": "^0.14.7",
-    "react-dom": "^0.14.6",
-    "create-react-class": "^15.6.3"
+    "react-dom": "^0.14.6"
   },
   "devDependencies": {
     "webpack": "^1.12.9"

@@ -1,3 +1,14 @@
 -- This is the css file that takes care of all css problems of the projects.
 
 --It will help make the program beutiful with colors and maybe some sizing
+
+#container{
+  border: solid;
+  border-radius: 5px;
+  border-color: blue;
+  border-style: dotted;
+}
+#table{
+  border-style: solid;
+  background-color: turquoise;
+}
