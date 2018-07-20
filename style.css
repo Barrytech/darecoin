@@ -12,3 +12,14 @@
   border-style: solid;
   background-color: turquoise;
 }
+.results{
+  text-align: right;
+}
+.labels{
+  text-align: justify;
+}
+#input-form{
+  position:absolute;
+
+margin-left: 500px;
+}

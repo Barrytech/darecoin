@@ -3,43 +3,87 @@
 <head>
   <title>DareChain/ Live Data Example - HTML5 jQuery Chart Plugin by jqChart</title>
   <script src="node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
-  <link type="text/css" rel="stylesheet" href="style.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link type="text/css" rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-<p> </P>
+  <nav class="navbar navbar-inverse">
+<div class="container-fluid">
+    <ul class="nav navbar-nav navbar-left">
+    <li><a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a></li>
+      <li><a href="#"><span> DARE-COIN </span></a></li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
 
-<div id="container">
-<table width:"100%" id="table">
+  <div id="container">
+  <table width:"100%" id="table">
 
-  <tr>
-    <th>Price:</th>
-    <th aligh="right" id="price">    bj  </th>
+    <tr>
+      <th class="labels">Price:</th>
+      <th aligh="right" id="price" class="results">    bj  </th>
 
-  </tr>
+    </tr>
 
-    <th>%Change</th>
-    <th aligh="right" id="change">      </th>
+      <th class="labels">%Change:</th>
+      <th aligh="right" id="change" class="results">      </th>
 
-  </tr>
+    </tr>
 
-    <th>Daily:</th>
-    <th aligh="right" id="day">      </th>
+      <th class="labels">Daily:</th>
+      <th aligh="right" id="day" class="results">      </th>
 
-  </tr>
+    </tr>
 
-    <th>Weekly:</th>
-    <th aligh="right" id="week">      </th>
+      <th class="labels">Weekly:</th>
+      <th aligh="right" id="week" class="results">      </th>
 
-  </tr>
+    </tr>
 
-    <th>Time and date:</th>
-    <th aligh="right" id="moment">      </th>
+      <th class="labels">Time and date:</th>
+      <th aligh="right" id="moment" class="results">      </th>
 
-  </tr>
+    </tr>
 
-</table>
+  </table>
+  </div>
 </div>
+
+<div class="col-md-5" >
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span> DARE-COIN </span></a></li>
+     <li><a href="#"><span> User Name </span></a></li>
+      <li><a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a></li>
+    </ul>
+
+  </div>
+    </div>
+        <div class="col-md-1"></div>
+      </div>
+
+</nav>
+
+<div id="input-form" >
+ <form>
+      <div class="input-group  input-sm" style="width: 400px; position:center">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="submit"> Submit
+          </button>
+        </div>
+         </div>
+
+    </form>
+    </div>
+
+</div>
+
 
 </body>
 </html>
