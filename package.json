@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "pulp build && webpack --progress --colors",
-    "run": "./node_modules/.bin/http-server ."
+    "server": "./node_modules/.bin/http-server ."
   },
   "dependencies": {
     "bignumber": "^1.1.0",

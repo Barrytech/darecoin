@@ -11,6 +11,8 @@
    <!-- Latest compiled and minified CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <link type="text/css" rel="stylesheet" href="style.css" />
+   <link rel="icon" href="" type="image/x-icon">
+
 </head>
 
 <body>
@@ -66,7 +68,7 @@
       <label id="wallet_label">Wallet</label>
       <div>
         <a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a>
-      <button type="button" onClick="watchBalance();" class="btn btn-info">Balance</button>
+      <button id="bal" type="button" class="btn btn-info">Balance</button>
     </div>
     </li>
       <div></div>
@@ -162,7 +164,7 @@ $('document').ready(function(){
 
   updatePrice();
   updateBalance();
-})
+});
 
 function updateBalance(){
 
@@ -170,21 +172,27 @@ function updateBalance(){
   // web3 <--- note lowercase!
   var web3js = new Web3(web3.currentProvider);
 
-  if(length(web3js.eth.accounts) < 1){
+  if(web3js.eth.accounts.length < 1){
     console.log("You don't have an account yet");
-    // TODO: update the DOM to tell the user that they need an account
+     // TODO: update the DOM to tell the user that they need an account
+    $('#bal').html("You don't have an account yet!");;
   } else {
     var myAccount = web3js.eth.accounts[0];
     web3js.eth.getBalance(myAccount, function(err, balance){
       console.log("Balance is: " + balance);
-      // TODO: use jQuery to update the DOM, as in updatePrice()
-    });
-  }
+      // TODO: use jQuery to update the DOM, as in updatePrice(
+      $('#bal').html('Balance: ' + balance +" ETH");
 
+      });
 
+    }
 
-  // update every 5s
-  setTimeout(updateBalance, 5000);
+    // update every 5s
+    setTimeout(updateBalance, 5000);
 }
+
+
+
+
 
 </script>
