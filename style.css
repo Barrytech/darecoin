@@ -21,3 +21,16 @@
 #input-form{
 margin-left: 500px;
 }
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#wallet_label{
+  font-style: italic;
+  font-size: 25px;
+  color: red;
+  font-weight: bolder;
+  font-family: fantasy;
+}

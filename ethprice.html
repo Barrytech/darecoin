@@ -4,7 +4,9 @@
   <title>DareChain/ Live Data Example - HTML5 jQuery Chart Plugin by jqChart</title>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.js"></script>
-  <script src="node_modules/bignumber.js/bignumber.js"</script>
+  <script src="node_modules/bignumber.js/bignumber.js"></script>
+  <script type="text/javascript" src="../node_modules/bignumber.js/bignumber.min.js"> </script>
+<script type="text/javascript" src="../dist/web3-light.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    <!-- Latest compiled and minified CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -58,11 +60,22 @@
 
 <div class="col-md-5" >
   <div class="container-fluid">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span> DARE-COIN </span></a></li>
-     <li><a href="#"><span> User Name </span></a></li>
-      <li><a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a></li>
-    </ul>
+    <div class="nav navbar-nav navbar-right">
+      <form>
+
+      <label id="wallet_label">Wallet</label>
+      <div>
+        <a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a>
+      <button type="button" onClick="watchBalance();" class="btn btn-info">Balance</button>
+    </div>
+    </li>
+      <div></div>
+      <div id="coinbase"></div>
+      <div id="original"></div>
+      <div id="current"></div>
+      <div id="diff"></div>
+
+    </div>
 
   </div>
     </div>
@@ -85,6 +98,16 @@
     </div>
 
 </div>
+
+<br> <br>
+<!-- //this is the wallet -->
+<h1>coinbase balance</h1>
+  <button type="button" onClick="watchBalance();">watch balance</button>
+  <div></div>
+  <div id="coinbase"></div>
+  <div id="original"></div>
+  <div id="current"></div>
+  <div id="diff"></div>
 
 
 </body>
@@ -128,5 +151,22 @@ function updatePrice(){
 $('document').ready(function(){
   updatePrice();
 })
+
+
+//the function for the metamask wallet starts here:
+var Web3 = require('web3');
+   var web3 = new Web3();
+   web3.setProvider(new web3.providers.HttpProvider());
+   function watchBalance() {
+       var coinbase = web3.eth.coinbase;
+       var originalBalance = web3.eth.getBalance(coinbase).toNumber();
+       document.getElementById('coinbase').innerText = 'coinbase: ' + coinbase;
+       document.getElementById('original').innerText = ' original balance: ' + originalBalance + '    watching...';
+       web3.eth.filter('latest').watch(function() {
+           var currentBalance = web3.eth.getBalance(coinbase).toNumber();
+           document.getElementById("current").innerText = 'current: ' + currentBalance;
+           document.getElementById("diff").innerText = 'diff:    ' + (currentBalance - originalBalance);
+       });
+   }
 
 </script>
