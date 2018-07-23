@@ -19,7 +19,7 @@
   text-align: justify;
 }
 #input-form{
-margin-left: 500px;
+margin-left: 400px;
 }
 .avatar {
     vertical-align: middle;
@@ -33,4 +33,11 @@ margin-left: 500px;
   color: red;
   font-weight: bolder;
   font-family: fantasy;
+}
+.navbar{
+background-color: #FEE891;
+}
+#choose{
+
+  margin-left: 400px:
 }
