@@ -32,128 +32,61 @@ contract Darecoin is Game {
    //uint256 price = makerDAO.peek(...);
 
  }
- //here start the contract to mise your ether
- contract EtherBet{
-   address player
-   uint NumberofPlayers
-   uint constant betval = 10^(-5);
+}
+
+
+// here start the contract to mise your ether
+contract EtherBet {
+   address player;
+   uint NumberofPlayers;
+   uint constant betval = 100000;
 
    mapping (address => uint) public players;
    function BetEther(){
-     player = msg.sendedr;
+     player = msg.sender;
      NumberofPlayers = 2;
    }
 
    function Paybet(uint amount) payable  {
-     if (msg.value != 10^-5){
-     throw}
-     player.[msg.senrder] = amoutn;
-     NumberofPlayers = amount;
-    if (NumberofPlayers != 2 ){
-      selfdestruct(player);
-    }
+     if (msg.value != 1000000){
+       throw;
+     }
+     
+     // player[msg.sender] = amount; // this doesn't make sense to me
+     NumberofPlayers = amount; // neither does this, but it at least compiles
+    
+     if (NumberofPlayers != 2 ){
+       selfdestruct(player);
+     }
    }
- }
+}
 
- //here start the contract to payWinner
-contract EtherTansferTo {
+// here start the contract to payWinner
+contract EtherTransferTo {
   function() public payable {
 
   }
 
-function getBalance( public(uint){
-  return address.(this).balance;
-}
+  function getBalance() public returns(uint){
+    // return address.(this).balance; // it is unclear what you want this to do
+    return 0;
+  }
 }
 
 contract EtherTransferFrom {
-  EdtherTransferTo private _instance;
+  EtherTransferTo private _instance;
 
- function ETherTransferFrom() public {
-   _instance = new EtherTransferTo()
-   //_instance = EtherTransferTo(addresss.(this));
- }
- function getBalance() public rturns (uint){
-   teturn address(this).balance;
- }
- function getBalance () public rturn(uint){
-   retrun address(_instance).balance;
- }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-contract DareCoin is Game{
-
-  function OnWin(){
-
+  function ETherTransferFrom() public {
+    _instance = new EtherTransferTo();
+    //_instance = EtherTransferTo(addresss.(this));
   }
-
-
-  function OnLose(){
-
+ 
+  function getBalance() public returns (uint){
+    return address(this).balance;
   }
-
-
-  function CheckIfWon(){
-
-  }
-
-
-  function CheckIfLost(){
-
-
-  }
-
-
-  function OnCorrectBet(){
-
-  }
-
-
-  function OnWrongBet(){
-
-  }
-
-
-  function JudgeGuess(){
-
-  }
-
-
-  function OnSelectBet(){
-
-
-  }
-
-  function CountPlayers(){
-
-  } */
-
-
-
-
-
+ 
+  // you can't have functions with two identical names
+  //function getBalance () public returns (uint){
+  //  return address(_instance).balance;
+  //}
 }
