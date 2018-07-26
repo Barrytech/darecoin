@@ -130,6 +130,8 @@
 
 /* global $ */
 var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
+var makerDAOReaderABI = "https://raw.githubusercontent.com/makerdao/feeds/master/src/abi/readable.json";
+var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
 
 function getTimeFromSeconds(timeInSecs){
     // API returns in seconds, but Date needs milliseconds
@@ -160,89 +162,46 @@ function updatePrice(){
   setTimeout(updatePrice, 5000);
 }
 
-$('document').ready(function(){
-
-  updatePrice();
-  updateBalance();
-});
-
 function updateBalance(){
-
-  // initialize web3js using Web3 object, with the data injected by metamask inside
-  // web3 <--- note lowercase!
-  var web3js = new Web3(web3.currentProvider);
-
-  if(web3js.eth.accounts.length < 1){
+  if(web3.eth.accounts.length < 1){
     console.log("You don't have an account yet");
      // TODO: update the DOM to tell the user that they need an account
     $('#bal').html("You don't have an account yet!");;
   } else {
-    var myAccount = web3js.eth.accounts[0];
-    web3js.eth.getBalance(myAccount, function(err, balance){
-      console.log("Balance is: " + balance);
-      // TODO: use jQuery to update the DOM, as in updatePrice(
-      $('#bal').html('Balance: ' + balance +" ETH");
-
+    var myAccount = web3.eth.accounts[0];
+    web3.eth.getBalance(myAccount, function(err, balance){
+        $('#bal').html('Balance: ' + web3.fromWei(balance, 'ether') + " ETH");
       });
-
     }
-
     // update every 5s
-    //setTimeout(updateBalance, 5000);
+    setTimeout(updateBalance, 5000);
 }
 
-//functions for bet start here:
+function updateMakerDAOPrice(){
+  if(web3.eth.accounts.length < 1){
+    console.log("You don't have an account yet");
+  } else {
+    var myAccount = web3.eth.accounts[0];
+    $.ajax(makerDAOReaderABI, {dataType: 'json'}).done(function(abi){
+      var makerDAO = web3.eth.contract(abi).at(makerDAOAddress); // create functions from the ABI
+      makerDAO.peek.call({from: myAccount}, function(error, ethResult){ // 'peek' is now a function!
+        var price = web3.fromWei(web3.toDecimal(ethResult[0]), 'ether');
 
-function OnWin(){
+        // TODO: insert this to the DOM
 
+        console.log("Price is: " + price);
+      })
+    })
+  }
+  // update very 10s
+  setTimeout(updateMakerDAOPrice, 10000);
 }
 
-
-function OnLose(){
-
-}
-
-
-function CheckIfWon(){
-
-}
-
-
-function CheckIfLost(){
-
-
-}
-
-
-function OnCorrectBet(){
-
-}
-
-
-function OnWrongBet(){
-
-}
-
-
-function JudgeGuess(){
-
-}
-
-
-function OnSelectBet(){
-  
-
-}
-
-function CountPlayers(){
-
-}
-
-
-
-
-
-
-
+// this gets called when the webpage has loaded
+$('document').ready(function(){
+  updatePrice();
+  updateBalance();
+  updateMakerDAOPrice();
+});
 
 </script>
