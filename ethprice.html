@@ -35,6 +35,11 @@
       <th aligh="right" id="price" class="results">      </th>
 
     </tr>
+    <tr>
+      <th class="labels">MakerDaoPrice:</th>
+      <th aligh="right" id="mkprice" class="results">      </th>
+
+    </tr>
 
       <th class="labels">%Change:</th>
       <th aligh="right" id="change" class="results">      </th>
@@ -151,6 +156,7 @@ function updatePrice(){
     var dateAsString = getTimeFromSeconds(res[0].last_updated);
 
     $("#price").html( "<strong>" +"$"+ price + "</strong>" );
+    $("#mkprice").html( "<strong>" +"$"+ price + "</strong>" ); ///
     $("#change").html( "<strong>" + change + "%"+"</strong>" );
     $("#moment").html( "<strong>" + dateAsString + "</strong>" );
     $("#day").html( "<strong>" + daychange+ "%" + "</strong>" );
