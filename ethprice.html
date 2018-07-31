@@ -11,7 +11,7 @@
    <!-- Latest compiled and minified CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <link type="text/css" rel="stylesheet" href="style.css" />
-   <link rel="icon" href="" type="image/x-icon">
+   <link rel="icon" href="http://cdn.onlinewebfonts.com/svg/img_453486.png" type="image/x-icon">
 
 </head>
 
@@ -31,13 +31,13 @@
   <table width:"100%" id="table">
 
     <tr>
-      <th class="labels">Price:</th>
+      <th class="labels">CoinMktPrice:</th>
       <th aligh="right" id="price" class="results">      </th>
 
     </tr>
     <tr>
       <th class="labels">MakerDaoPrice:</th>
-      <th aligh="right" id="mkprice" class="results">      </th>
+      <th aligh="right" id="mkprice" class="results" style= "color: red; font-size: 20px; font-weight:bolder">      </th>
 
     </tr>
 
@@ -77,12 +77,12 @@
     </div>
     </li>
       <div></div>
-      <div id="coinbase"></div>
-      <div id="original"></div>
-      <div id="current"></div>
-      <div id="diff"></div>
+        <div id="coinbase"></div>
+        <div id="original"></div>
+        <div id="current"></div>
+        <div id="diff"></div>
 
-    </div>
+      </div>
 
   </div>
     </div>
@@ -153,14 +153,15 @@ function updatePrice(){
     var daychange = res[0].percent_change_24h;
     var weekchange = res[0].percent_change_7d;
 
+
     var dateAsString = getTimeFromSeconds(res[0].last_updated);
 
-    $("#price").html( "<strong>" +"$"+ price + "</strong>" );
-    $("#mkprice").html( "<strong>" +"$"+ price + "</strong>" ); ///
-    $("#change").html( "<strong>" + change + "%"+"</strong>" );
+    $("#price").html( "<strong>" +"$ "+  price + "</strong>" );
+    $("#change").html( "<strong>" + change + " %"+"</strong>" );
+    $("#day").html( "<strong>" + daychange+ " %" + "</strong>" );
+    $("#week").html( "<strong>" + weekchange+ " %" + "</strong>" );
     $("#moment").html( "<strong>" + dateAsString + "</strong>" );
-    $("#day").html( "<strong>" + daychange+ "%" + "</strong>" );
-    $("#week").html( "<strong>" + weekchange+ "%" + "</strong>" );
+
 
   });
 
@@ -193,9 +194,11 @@ function updateMakerDAOPrice(){
       makerDAO.peek.call({from: myAccount}, function(error, ethResult){ // 'peek' is now a function!
         var price = web3.fromWei(web3.toDecimal(ethResult[0]), 'ether');
 
+
         // TODO: insert this to the DOM
 
         console.log("Price is: " + price);
+        $("#mkprice").html(" <strong>" + "$" + price + "</strong>");
       })
     })
   }
@@ -205,6 +208,7 @@ function updateMakerDAOPrice(){
 
 // this gets called when the webpage has loaded
 $('document').ready(function(){
+
   updatePrice();
   updateBalance();
   updateMakerDAOPrice();
