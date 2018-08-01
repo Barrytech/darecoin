@@ -125,14 +125,14 @@
     "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/GameRegistry.sol",
     "exportedSymbols": {
       "GameRegistry": [
-        1435
+        1401
       ]
     },
-    "id": 1436,
+    "id": 1402,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1405,
+        "id": 1371,
         "literals": [
           "solidity",
           "^",
@@ -145,10 +145,10 @@
       {
         "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 1406,
+        "id": 1372,
         "nodeType": "ImportDirective",
-        "scope": 1436,
-        "sourceUnit": 1957,
+        "scope": 1402,
+        "sourceUnit": 1923,
         "src": "26:23:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -159,41 +159,41 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1407,
+              "id": 1373,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1956,
+              "referencedDeclaration": 1922,
               "src": "76:7:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$1956",
+                "typeIdentifier": "t_contract$_Ownable_$1922",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 1408,
+            "id": 1374,
             "nodeType": "InheritanceSpecifier",
             "src": "76:7:6"
           }
         ],
         "contractDependencies": [
-          1956
+          1922
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1435,
+        "id": 1401,
         "linearizedBaseContracts": [
-          1435,
-          1956
+          1401,
+          1922
         ],
         "name": "GameRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1411,
+            "id": 1377,
             "name": "gameAddresses",
             "nodeType": "VariableDeclaration",
-            "scope": 1435,
+            "scope": 1401,
             "src": "87:30:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -203,7 +203,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 1409,
+                "id": 1375,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "87:7:6",
@@ -212,7 +212,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 1410,
+              "id": 1376,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "87:9:6",
@@ -226,7 +226,7 @@
           },
           {
             "body": {
-              "id": 1424,
+              "id": 1390,
               "nodeType": "Block",
               "src": "235:41:6",
               "statements": [
@@ -236,11 +236,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1421,
+                        "id": 1387,
                         "name": "newGame",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1413,
+                        "referencedDeclaration": 1379,
                         "src": "261:7:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -257,18 +257,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1418,
+                        "id": 1384,
                         "name": "gameAddresses",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1411,
+                        "referencedDeclaration": 1377,
                         "src": "242:13:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 1420,
+                      "id": 1386,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -282,7 +282,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 1422,
+                    "id": 1388,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -296,28 +296,28 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1423,
+                  "id": 1389,
                   "nodeType": "ExpressionStatement",
                   "src": "242:27:6"
                 }
               ]
             },
             "documentation": "Inserts a new game into the registry.",
-            "id": 1425,
+            "id": 1391,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 1416,
+                "id": 1382,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1415,
+                  "id": 1381,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1914,
+                  "referencedDeclaration": 1880,
                   "src": "225:9:6",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -331,15 +331,15 @@
             "name": "insert",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1414,
+              "id": 1380,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1413,
+                  "id": 1379,
                   "name": "newGame",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1425,
+                  "scope": 1391,
                   "src": "201:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -348,7 +348,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1412,
+                    "id": 1378,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "201:7:6",
@@ -365,12 +365,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1417,
+              "id": 1383,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "235:0:6"
             },
-            "scope": 1435,
+            "scope": 1401,
             "src": "185:91:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -378,33 +378,33 @@
           },
           {
             "body": {
-              "id": 1433,
+              "id": 1399,
               "nodeType": "Block",
               "src": "340:34:6",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1431,
+                    "id": 1397,
                     "name": "gameAddresses",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1411,
+                    "referencedDeclaration": 1377,
                     "src": "354:13:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 1430,
-                  "id": 1432,
+                  "functionReturnParameters": 1396,
+                  "id": 1398,
                   "nodeType": "Return",
                   "src": "347:20:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 1434,
+            "id": 1400,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -412,22 +412,22 @@
             "name": "getGameAdresses",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1426,
+              "id": 1392,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "306:2:6"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1430,
+              "id": 1396,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1429,
+                  "id": 1395,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1434,
+                  "scope": 1400,
                   "src": "330:9:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -437,7 +437,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1427,
+                      "id": 1393,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "330:7:6",
@@ -446,7 +446,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 1428,
+                    "id": 1394,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "330:9:6",
@@ -461,14 +461,14 @@
               ],
               "src": "329:11:6"
             },
-            "scope": 1435,
+            "scope": 1401,
             "src": "282:92:6",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1436,
+        "scope": 1402,
         "src": "51:327:6"
       }
     ],
@@ -478,14 +478,14 @@
     "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/GameRegistry.sol",
     "exportedSymbols": {
       "GameRegistry": [
-        1435
+        1401
       ]
     },
-    "id": 1436,
+    "id": 1402,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1405,
+        "id": 1371,
         "literals": [
           "solidity",
           "^",
@@ -498,10 +498,10 @@
       {
         "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/Ownable.sol",
         "file": "./Ownable.sol",
-        "id": 1406,
+        "id": 1372,
         "nodeType": "ImportDirective",
-        "scope": 1436,
-        "sourceUnit": 1957,
+        "scope": 1402,
+        "sourceUnit": 1923,
         "src": "26:23:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -512,41 +512,41 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1407,
+              "id": 1373,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1956,
+              "referencedDeclaration": 1922,
               "src": "76:7:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$1956",
+                "typeIdentifier": "t_contract$_Ownable_$1922",
                 "typeString": "contract Ownable"
               }
             },
-            "id": 1408,
+            "id": 1374,
             "nodeType": "InheritanceSpecifier",
             "src": "76:7:6"
           }
         ],
         "contractDependencies": [
-          1956
+          1922
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1435,
+        "id": 1401,
         "linearizedBaseContracts": [
-          1435,
-          1956
+          1401,
+          1922
         ],
         "name": "GameRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1411,
+            "id": 1377,
             "name": "gameAddresses",
             "nodeType": "VariableDeclaration",
-            "scope": 1435,
+            "scope": 1401,
             "src": "87:30:6",
             "stateVariable": true,
             "storageLocation": "default",
@@ -556,7 +556,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 1409,
+                "id": 1375,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "87:7:6",
@@ -565,7 +565,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 1410,
+              "id": 1376,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "87:9:6",
@@ -579,7 +579,7 @@
           },
           {
             "body": {
-              "id": 1424,
+              "id": 1390,
               "nodeType": "Block",
               "src": "235:41:6",
               "statements": [
@@ -589,11 +589,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 1421,
+                        "id": 1387,
                         "name": "newGame",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1413,
+                        "referencedDeclaration": 1379,
                         "src": "261:7:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -610,18 +610,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 1418,
+                        "id": 1384,
                         "name": "gameAddresses",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1411,
+                        "referencedDeclaration": 1377,
                         "src": "242:13:6",
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage",
                           "typeString": "address[] storage ref"
                         }
                       },
-                      "id": 1420,
+                      "id": 1386,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -635,7 +635,7 @@
                         "typeString": "function (address) returns (uint256)"
                       }
                     },
-                    "id": 1422,
+                    "id": 1388,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -649,28 +649,28 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1423,
+                  "id": 1389,
                   "nodeType": "ExpressionStatement",
                   "src": "242:27:6"
                 }
               ]
             },
             "documentation": "Inserts a new game into the registry.",
-            "id": 1425,
+            "id": 1391,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 1416,
+                "id": 1382,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 1415,
+                  "id": 1381,
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1914,
+                  "referencedDeclaration": 1880,
                   "src": "225:9:6",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -684,15 +684,15 @@
             "name": "insert",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1414,
+              "id": 1380,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1413,
+                  "id": 1379,
                   "name": "newGame",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1425,
+                  "scope": 1391,
                   "src": "201:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -701,7 +701,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1412,
+                    "id": 1378,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "201:7:6",
@@ -718,12 +718,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 1417,
+              "id": 1383,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "235:0:6"
             },
-            "scope": 1435,
+            "scope": 1401,
             "src": "185:91:6",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -731,33 +731,33 @@
           },
           {
             "body": {
-              "id": 1433,
+              "id": 1399,
               "nodeType": "Block",
               "src": "340:34:6",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 1431,
+                    "id": 1397,
                     "name": "gameAddresses",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1411,
+                    "referencedDeclaration": 1377,
                     "src": "354:13:6",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 1430,
-                  "id": 1432,
+                  "functionReturnParameters": 1396,
+                  "id": 1398,
                   "nodeType": "Return",
                   "src": "347:20:6"
                 }
               ]
             },
             "documentation": null,
-            "id": 1434,
+            "id": 1400,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -765,22 +765,22 @@
             "name": "getGameAdresses",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1426,
+              "id": 1392,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "306:2:6"
             },
             "payable": false,
             "returnParameters": {
-              "id": 1430,
+              "id": 1396,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1429,
+                  "id": 1395,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1434,
+                  "scope": 1400,
                   "src": "330:9:6",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -790,7 +790,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 1427,
+                      "id": 1393,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "330:7:6",
@@ -799,7 +799,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 1428,
+                    "id": 1394,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "330:9:6",
@@ -814,14 +814,14 @@
               ],
               "src": "329:11:6"
             },
-            "scope": 1435,
+            "scope": 1401,
             "src": "282:92:6",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 1436,
+        "scope": 1402,
         "src": "51:327:6"
       }
     ],
@@ -833,5 +833,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-01T15:13:43.029Z"
+  "updatedAt": "2018-08-01T15:46:30.005Z"
 }

@@ -22,39 +22,37 @@ contract Darecoin is Game {
 
     }
 
+  function checkGuess(string guess) private {
+    uint guessAsInt = stringToUint(guess);
+    require(guessAsInt == 0 || guessAsInt == 1);
+  }
 
- function checkGuess(string guess) private {
-   uint guessAsInt = stringToUint(guess);
-   require(guessAsInt == 0 || guessAsInt == 1);
- }
-
- function findWinners() private {
-
-   //uint256 price = makerDAO.peek(...);
- }
+  function findWinners() private {
+    //uint256 price = makerDAO.peek(...);
+  }
 }
- //here start the contract to mise your ether
- contract EtherBet{
-   address player;
-   uint NumberofPlayers;
-   uint constant betval = 10000000000000;
 
-   mapping (address => uint) public players;
-   
-   function BetEther () public {
-     player = msg.sender;
-     NumberofPlayers = 2;
-   }
+//here start the contract to mise your ether
+contract EtherBet{
+  address player;
+  uint NumberofPlayers;
+  uint constant betval = 10000000000000;
 
-   function Paybet(uint amount) public payable {
-     require(msg.value == betval);
+  mapping (address => uint) public players;
+  
+  function BetEther () public {
+    player = msg.sender;
+    NumberofPlayers = 2;
+  }
 
-     NumberofPlayers = amount;
+  function Paybet(uint amount) public payable {
+    require(msg.value == betval);
 
-     if (NumberofPlayers != 2 ){
-       selfdestruct(player);
-     }
-   }
+    NumberofPlayers = amount;
 
+    if (NumberofPlayers != 2 ){
+      selfdestruct(player);
+    }
+  }
 }
 
