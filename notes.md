@@ -23,30 +23,32 @@ import "./Game.sol"
 contract MyGame is Game {
 
   function checkGuess(string guess) private {
-  
+   string bet = ""
+
+
   }
-  
+
 }
  ```
- 
+
  Note that it appears that we call `stringToUint` from `GameHelper.sol` inside of this function. This "decrypts" the value stored in the contract back to the original number.
- 
+
  ## 3. Every game implements the function `findWinners`
- 
+
  ```js
- 
+
 import "./Game.sol"
 
 contract MyGame is Game {
 
   function checkGuess(string guess) private {
-  
+
   }
-  
+
   function findWinners() private {
-  
+
   }
-  
+
 }
  ```
 
@@ -59,7 +61,7 @@ Dear all, games should inherit form this contract because this contract has the 
 The specific game will have to only define two functions:
 
 -- guessCheck(string guess): the function has to error out in if the guess is not compliant with the rules
--- findWinners(): the function determined the winners and distributes the payouts. 
+-- findWinners(): the function determined the winners and distributes the payouts.
 
 */
 
@@ -73,9 +75,9 @@ The specific game will have to only define two functions:
 */
 ```
 
-We have 
-- `function reveal(string guess, string random) public whenNotPaused` 
-- `function commit(bytes32 hashedCommit) public payable whenNotPaused` 
+We have
+- `function reveal(string guess, string random) public whenNotPaused`
+- `function commit(bytes32 hashedCommit) public payable whenNotPaused`
 
 So probably it works like this:
 
