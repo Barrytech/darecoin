@@ -18,9 +18,8 @@ contract Darecoin is Game {
         address _makerDAOAddress // <-- the address to our makerDAO contract
         )
           public Game(_feeAddress, _gameFeePercent, _stakeSize, _maxp, _gameStageLength, _nptAddress) {
-         makerDAO = _makerDAOAddress;
-
-    }
+    makerDAO = _makerDAOAddress;
+  }
 
   function checkGuess(string guess) private {
     uint guessAsInt = stringToUint(guess);
@@ -28,7 +27,24 @@ contract Darecoin is Game {
   }
 
   function findWinners() private {
-    //uint256 price = makerDAO.peek(...);
+
+    address[] memory winners = new address[](config.MAX_PLAYERS);
+
+    uint rightResult = 1; // assume UP is the right answer
+
+    for(uint256 i = 0; i < state.currNumberReveals; i++){
+      uint numWinners = 0;
+      uint256 playForPlayer = stringToUint(gameData[gameDataKeys[i]]);
+
+      if(playForPlayer == rightResult){
+        numWinners++;
+        winners[numWinners] = gameDataKeys[i];
+      }
+    }
+
+  uint256 prize = address(this).balance.div(numWinners);
+  performPayout(winners, numWinners, prize);
+
   }
 }
 
