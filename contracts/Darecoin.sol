@@ -19,6 +19,7 @@ contract Darecoin is Game {
         )
           public Game(_feeAddress, _gameFeePercent, _stakeSize, _maxp, _gameStageLength, _nptAddress) {
          makerDAO = _makerDAOAddress;
+
     }
 
 
@@ -30,63 +31,30 @@ contract Darecoin is Game {
  function findWinners() private {
 
    //uint256 price = makerDAO.peek(...);
-
  }
 }
-
-
-// here start the contract to mise your ether
-contract EtherBet {
+ //here start the contract to mise your ether
+ contract EtherBet{
    address player;
    uint NumberofPlayers;
-   uint constant betval = 100000;
+   uint constant betval = 10000000000000;
 
    mapping (address => uint) public players;
-   function BetEther(){
+   
+   function BetEther () public {
      player = msg.sender;
      NumberofPlayers = 2;
    }
 
-   function Paybet(uint amount) payable  {
-     if (msg.value != 1000000){
-       throw;
-     }
-     
-     // player[msg.sender] = amount; // this doesn't make sense to me
-     NumberofPlayers = amount; // neither does this, but it at least compiles
-    
+   function Paybet(uint amount) public payable {
+     require(msg.value == betval);
+
+     NumberofPlayers = amount;
+
      if (NumberofPlayers != 2 ){
        selfdestruct(player);
      }
    }
+
 }
 
-// here start the contract to payWinner
-contract EtherTransferTo {
-  function() public payable {
-
-  }
-
-  function getBalance() public returns(uint){
-    // return address.(this).balance; // it is unclear what you want this to do
-    return 0;
-  }
-}
-
-contract EtherTransferFrom {
-  EtherTransferTo private _instance;
-
-  function ETherTransferFrom() public {
-    _instance = new EtherTransferTo();
-    //_instance = EtherTransferTo(addresss.(this));
-  }
- 
-  function getBalance() public returns (uint){
-    return address(this).balance;
-  }
- 
-  // you can't have functions with two identical names
-  //function getBalance () public returns (uint){
-  //  return address(_instance).balance;
-  //}
-}

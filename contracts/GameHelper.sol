@@ -8,7 +8,7 @@ pragma solidity ^0.4.23;
 contract GameHelper {
 
     function getSha(string one, string two) internal pure returns(bytes32) {
-        return keccak256(one, two);
+        return keccak256(abi.encodePacked(one, two));
     }
 
     // Move to helper
