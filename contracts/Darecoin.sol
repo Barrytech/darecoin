@@ -22,19 +22,64 @@ contract Darecoin is Game {
 
     }
 
+enum playState { Up, Dowm, Static}
+address user1Address = "TBD";
+address user2Address = "TBD";
+
+playState user1;
+playState user2;
+
+uint cost = 10000000000000;
+
+function reward(address winner) private{
+  winner.send(cost*2);
+}
+
+function NoWinner(address user1, address user2) private {
+  user1.send(cost);
+  user2.send(cost);
+}
+
+
+
 
  function checkGuess(string guess) private {
    uint guessAsInt = stringToUint(guess);
    require(guessAsInt == 0 || guessAsInt == 1);
+   require(msg.send == cost);
+if (user1 == playState.Up){
+  OnUser1Wins();
+}else if(user2 == playState.Up){
+  OnUser2Wins();
+}else{
+  NoWinner();
+}
  }
 
  function findWinners() private {
 
    //uint256 price = makerDAO.peek(...);
+   checkGuess();
  }
+
+
+
+function OnUser1Wins(){
+  reward(user1);
 }
+function OnUser2Wins(){
+  reward(user2);
+}
+
+
+
+
+
+
+
+
  //here start the contract to mise your ether
- contract EtherBet{
+ /* contract EtherBet{
    address player;
    uint NumberofPlayers;
    uint constant betval = 10000000000000;
@@ -54,6 +99,6 @@ contract Darecoin is Game {
      if (NumberofPlayers != 2 ){
        selfdestruct(player);
      }
-   }
+   } */
 
 }
