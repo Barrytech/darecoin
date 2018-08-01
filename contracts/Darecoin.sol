@@ -42,8 +42,8 @@ contract Darecoin is Game {
       }
     }
 
-  uint256 prize = address(this).balance.div(numWinners);
-  performPayout(winners, numWinners, prize);
+    uint256 prize = address(this).balance.div(numWinners);
+    performPayout(winners, numWinners, prize);
 
   }
 }
