@@ -1,12 +1,15 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.24;
 
 import "./Game.sol";
 
 contract Darecoin is Game {
 
-  enum gamePlay {DOWN, UP} // DOWN = 0, UP = 1
+  enum playState { Up, Dowm, Static} // DOWN = 0, UP = 1
 
   address makerDAO = 0x0;
+  address user1Address;
+  address user2Address ;
+
 
   constructor(
         address _feeAddress,
@@ -22,34 +25,34 @@ contract Darecoin is Game {
 
     }
 
-enum playState { Up, Dowm, Static}
-address user1Address = "TBD";
-address user2Address = "TBD";
 
-playState user1;
-playState user2;
+function SetUsers() private{
+
+  user1Address =0x00;  //TBD
+  user2Address = 0x00;  //TBD
+}
+ int User1Guess = user1Address.playState;
+ int User2Guess = user2Address.playState;
 
 uint cost = 10000000000000;
 
 function reward(address winner) private{
-  winner.send(cost*2);
+  winner.transfer(cost*2);
 }
 
 function NoWinner(address user1, address user2) private {
-  user1.send(cost);
-  user2.send(cost);
+  user1Address.transfer(cost);
+  user2Address.transfer(cost);
 }
-
-
 
 
  function checkGuess(string guess) private {
    uint guessAsInt = stringToUint(guess);
    require(guessAsInt == 0 || guessAsInt == 1);
-   require(msg.send == cost);
-if (user1 == playState.Up){
+   require(msg.value == cost);
+if ( User1Guess.guessAsInt == 0){
   OnUser1Wins();
-}else if(user2 == playState.Up){
+}else if( User2Guess.guessAsInt == 0){
   OnUser2Wins();
 }else{
   NoWinner();
@@ -65,11 +68,43 @@ if (user1 == playState.Up){
 
 
 function OnUser1Wins(){
-  reward(user1);
+  reward(user1Address);
 }
 function OnUser2Wins(){
-  reward(user2);
+  reward(user1Address);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
