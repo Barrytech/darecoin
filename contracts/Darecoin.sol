@@ -31,10 +31,11 @@ function SetUsers() private{
   user1Address =0x00;  //TBD
   user2Address = 0x00;  //TBD
 }
+
  int User1Guess = user1Address.playState;
  int User2Guess = user2Address.playState;
+ uint cost = 10000000000000;
 
-uint cost = 10000000000000;
 
 function reward(address winner) private{
   winner.transfer(cost*2);
@@ -46,20 +47,20 @@ function NoWinner(address user1, address user2) private {
 }
 
 
- function checkGuess(string guess) private {
-   uint guessAsInt = stringToUint(guess);
-   require(guessAsInt == 0 || guessAsInt == 1);
-   require(msg.value == cost);
-if ( User1Guess.guessAsInt == 0){
-  OnUser1Wins();
-}else if( User2Guess.guessAsInt == 0){
-  OnUser2Wins();
-}else{
-  NoWinner();
-}
- }
+function checkGuess(string guess) private {
+        uint guessAsInt = stringToUint(guess);
+        require(guessAsInt == 0 || guessAsInt == 1);
+        require(msg.value == cost);
+      if ( User1Guess.guessAsInt == 0){
+          OnUser1Wins();
+      }else if( User2Guess.guessAsInt == 0){
+          OnUser2Wins();
+      }else{
 
- function findWinners() private {
+      }
+}
+
+function findWinners() private {
 
    //uint256 price = makerDAO.peek(...);
    checkGuess();
@@ -76,6 +77,10 @@ function OnUser2Wins(){
 
 
 
+
+
+//contract ends there
+}
 
 
 
@@ -135,5 +140,3 @@ function OnUser2Wins(){
        selfdestruct(player);
      }
    } */
-
-}
