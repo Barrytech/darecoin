@@ -7,14 +7,14 @@ contract Darecoin is Game {
   enum playState { Up, Dowm  } // DOWN = 0, UP = 1
 
   address makerDAO = 0x0;
-  address user1Address = 0x00;  //TBD
-  address user2Address = 0x00;  //TBD
+  address player1Address = 0x00;  //TBD
+  address player2Address = 0x00;  //TBD
 
   playState User1;
   playState User2;
 
-  int User1Guess = user1Address.playState; // how to get the user input value?
-  int User2Guess = user2Address.playState; // how to get the user imput value
+  int player1Guess = player1Address.playState; // how to get the user input value?
+  int player2Guess = player2Address.playState; // how to get the user imput value
   uint cost = 10000000000000;
 
 
@@ -34,15 +34,6 @@ contract Darecoin is Game {
 
 
 
-       bytes32 public userHashs;
-
-       function userInput(bytes32 _hash)public {
-          userHashs = _hash;
-       }
-
-
-
-
 function reward(address winner) private{
         winner.transfer(cost*2);
 }
@@ -50,13 +41,80 @@ function reward(address winner) private{
 
 
 function NoWinner(address user1, address user2) private {
-        user1Address.transfer(cost);
-        user2Address.transfer(cost);
+        player1Address.transfer(cost);
+        player2Address.transfer(cost);
+}
+
+
+ // inspired from solidity sample, testing logic:
+
+
+    function setPlayers() private {
+        if(player1Address == 0x0) {
+            player1Address = msg.sender;
+        } else {
+            player2Address = msg.sender;
+        }
+    }
+
+
+
+
+ function playPriceUp() public {
+      require(msg.value >= cost);
+      setPlayers();
+      if(msg.sender == player1Address){
+          player1 = playState.Up;
+      }
+      if(msg.sender == player2Address){
+          player2 = playState.Up;
+      }
+  }
+
+  function playPriceDown() public {
+      require(msg.value >= cost);
+      setPlayers();
+      if(msg.sender == player1Address){
+          player1 = playState.Down;
+      }
+      if(msg.sender == player2Address){
+          player2 = playState.Down;
+      }
+  }
+
+  function determineGameAndReward() public {
+       if(player1 == playState.Up && player2 == playState.Down){
+           reward(player1Address);
+       }
+       if(player1 == playState.Down && player2 == playState.Up){
+           reward(player2Address);
+       }
+       if(player1 == playState.Up && player2 == playState.Up){
+           NoWinner(player1Address, player2Address);
+       }
+
+
+  // logic test ends here
+
+
+
+
+
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+/*
 function checkGuess(string guess) private {
         uint guessAsInt = stringToUint(guess);
         require(guessAsInt == 0 || guessAsInt == 1);
@@ -87,69 +145,9 @@ function OnUser1Wins(){
 function OnUser2Wins(){
       reward(user1Address);
 }
-
+ */
 
 
 
 
 //contract ends there
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //here start the contract to mise your ether
- /* contract EtherBet{
-   address player;
-   uint NumberofPlayers;
-   uint constant betval = 10000000000000;
-
-   mapping (address => uint) public players;
-
-   function BetEther () public {
-     player = msg.sender;
-     NumberofPlayers = 2;
-   }
-
-   function Paybet(uint amount) public payable {
-     require(msg.value == betval);
-
-     NumberofPlayers = amount;
-
-     if (NumberofPlayers != 2 ){
-       selfdestruct(player);
-     }
-   } */
