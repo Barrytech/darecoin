@@ -4,11 +4,18 @@ import "./Game.sol";
 
 contract Darecoin is Game {
 
-  enum playState { Up, Dowm, Static} // DOWN = 0, UP = 1
+  enum playState { Up, Dowm  } // DOWN = 0, UP = 1
 
   address makerDAO = 0x0;
-  address user1Address;
-  address user2Address ;
+  address user1Address = 0x00;  //TBD
+  address user2Address = 0x00;  //TBD
+
+  playState User1;
+  playState User2;
+
+  int User1Guess = user1Address.playState; // how to get the user input value?
+  int User2Guess = user2Address.playState; // how to get the user imput value
+  uint cost = 10000000000000;
 
 
   constructor(
@@ -26,25 +33,28 @@ contract Darecoin is Game {
     }
 
 
-function SetUsers() private{
 
-  user1Address =0x00;  //TBD
-  user2Address = 0x00;  //TBD
-}
+       bytes32 public userHashs;
 
- int User1Guess = user1Address.playState;
- int User2Guess = user2Address.playState;
- uint cost = 10000000000000;
+       function userInput(bytes32 _hash)public {
+          userHashs = _hash;
+       }
+
+
 
 
 function reward(address winner) private{
-  winner.transfer(cost*2);
+        winner.transfer(cost*2);
 }
 
+
+
 function NoWinner(address user1, address user2) private {
-  user1Address.transfer(cost);
-  user2Address.transfer(cost);
+        user1Address.transfer(cost);
+        user2Address.transfer(cost);
 }
+
+
 
 
 function checkGuess(string guess) private {
@@ -60,19 +70,22 @@ function checkGuess(string guess) private {
       }
 }
 
+
+
 function findWinners() private {
 
    //uint256 price = makerDAO.peek(...);
-   checkGuess();
+      checkGuess();
  }
 
 
 
 function OnUser1Wins(){
-  reward(user1Address);
+      reward(user1Address);
 }
+
 function OnUser2Wins(){
-  reward(user1Address);
+      reward(user1Address);
 }
 
 
