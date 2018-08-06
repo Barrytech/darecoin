@@ -69,7 +69,8 @@ function NoWinner(address user1, address user2) private {
       }
   }
 
-  function playPriceDown() public {
+  function
+  () public {
       require(msg.value >= cost);
       setPlayers();
       if(msg.sender == player1Address){

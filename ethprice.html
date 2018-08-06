@@ -188,6 +188,8 @@ function updateMakerDAOPrice(){
 
         // TODO: insert this to the DOM
 
+
+
         console.log("Price is: " + price);
         $("#mkprice").html(" <strong>" + "$" + price + "</strong>");
       })
@@ -195,6 +197,18 @@ function updateMakerDAOPrice(){
   }
   // update very 10s
   setTimeout(updateMakerDAOPrice, 10000);
+}
+
+
+//Function connected to smart contract
+
+function PriceJUp(){
+
+
+}
+
+function PriceDow(){
+
 }
 
 // this gets called when the webpage has loaded
