@@ -13,8 +13,6 @@ contract Darecoin is Game {
   playState User1;
   playState User2;
 
-  int player1Guess = player1Address.playState; // how to get the user input value?
-  int player2Guess = player2Address.playState; // how to get the user imput value
   uint cost = 10000000000000;
 
 
