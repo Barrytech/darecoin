@@ -97,7 +97,7 @@
       <option id="betnow" value="Choose"> Choose</option>
         <option id="betUp" value="Up"> Up</option>
         <option id="betDown" value="Down"> Down</option>
-    ß</form>
+    </form>
 </div>
 
 <br> <br>
@@ -119,6 +119,8 @@
 var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
 var makerDAOReaderABI = "https://raw.githubusercontent.com/makerdao/feeds/master/src/abi/readable.json";
 var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
+var dareCoinABI = "https://raw.githubusercontent.com/Barrytech/";
+var dareCoinAddress = "0xaaaa";
 
 function getTimeFromSeconds(timeInSecs){
     // API returns in seconds, but Date needs milliseconds
@@ -175,13 +177,6 @@ function updateMakerDAOPrice(){
       var makerDAO = web3.eth.contract(abi).at(makerDAOAddress); // create functions from the ABI
       makerDAO.peek.call({from: myAccount}, function(error, ethResult){ // 'peek' is now a function!
         var price = web3.fromWei(web3.toDecimal(ethResult[0]), 'ether');
-
-
-        // TODO: insert this to the DOM
-
-
-
-        console.log("Price is: " + price);
         $("#mkprice").html(" <strong>" + "$" + price + "</strong>");
       })
     })
@@ -192,17 +187,48 @@ function updateMakerDAOPrice(){
 
 
 //Function connected to smart contract
-  // var Array = [ $("#Inputvalue"), $("#Input2vale")];
+
 function OnceClicked(){
 
     $("#betUp").on('click' function(){
 
+      var hashCommit = web3.sha(1); // UP = 1
+      //send to smartcontract for verification
+      if(web3.eth.accounts.length < 1){
+        console.log("You don't have an account yet");
+      } else {
+        var myAccount = web3.eth.accounts[0];
+        $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
+          var dareCoin = web3.eth.contract(abi).at(dareCoinAddress); // create functions from the ABI
+          dareCoin.commit.sendTransaction( hashCommit,
+                                          { from: myAccount, value: 10000000000000 ETH }
+                                          , function(error, ethResult) { // 'peek' is now a function!
+            // this is the result of the transaction
+          })
+        })
+      }
+
+
 }
 
     $("#betDown").on('click' function(){
+      var hashCommit = web3.sha(0); // DOWN = 1
 
+      //send to smartcontract for verification
+      if(web3.eth.accounts.length < 1){
+        console.log("You don't have an account yet");
+      } else {
+        var myAccount = web3.eth.accounts[0];
+        $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
+          var dareCoin = web3.eth.contract(abi).at(dareCoinAddress); // create functions from the ABI
+          dareCoin.commit.sendTransaction( hashCommit,
+                                          { from: myAccount, value: 10000000000000 ETH }
+                                          , function(error, ethResult) { // 'peek' is now a function!
+            // this is the result of the transaction
+          })
+        })
+      }
     }
-
 }
 
 
@@ -212,7 +238,7 @@ $('document').ready(function(){
   updatePrice();
   updateBalance();
   updateMakerDAOPrice();
-  OnceClicked();
+  //OnceClicked();
 });
 
 </script>
