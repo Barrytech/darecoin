@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 pragma solidity ^0.4.23;
 
 import "./Game.sol";
@@ -192,7 +190,7 @@ contract Darecoin is Game {
   }
 
   function commit(bytes32 hashedCommit) public payable whenNotPaused {
-      
+
     // if the first player is playing
     if (state.currNumberCommits == 0) {
         startPrice = makerDAO.read();
@@ -226,26 +224,24 @@ contract Darecoin is Game {
     bytes32 newPrice = makerDAO.read();
 
     if(block.number > startBlock + 240) // wait approximately one hour
-    
+
         uint rightResult = newPrice > startPrice ? uint(gamePlay.UP) : uint(gamePlay.DOWN);
-    
+
         for(uint256 i = 0; i < state.currNumberReveals; i++){
           uint numWinners = 0;
           uint256 playForPlayer = stringToUint(gameData[gameDataKeys[i]]);
-    
+
           if(playForPlayer == rightResult){
             winners[numWinners] = gameDataKeys[i];
             numWinners++;
           }
         }
-    
+
         uint256 prize = address(this).balance.div(numWinners);
         performPayout(winners, numWinners, prize);
-    
+
     }
 }
 
 <<<<<<< HEAD
 //contract ends there */
-=======
->>>>>>> 59f7c651f11a9ed92109adad1d706fab77f44e73
