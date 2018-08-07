@@ -114,22 +114,17 @@ Here starts the code for the user interaction interface beside the navbar -->
 <div  class="row">
     <div class="col-md-4"></div>
     <div class ="col-md-4">
-    <button id="reveal" class="btn  btn-lg btn-success disabled" disabeled= "disabled" > Reveal </button>
+    <button id="reveal" class="btn btn-lg btn-success"> Reveal </button>
   </div>
       <div class="col-md-4"></div>
 </div>
-
-
 
 </body>
 </html>
 
 <!-- CODE GOES BELOW -->
 
-
 <script>
-
-
 
 function genSalt(){
   var array = new Uint32Array(1);
@@ -248,33 +243,28 @@ function commitToDareCoin(value){
 
 function revealToDareCoin(value, salt){
 
-
-   dareCoin.reveal.sendTransaction( ""+value, salt, {from: myAccount, value: 0}, function(error, ethResult){
-
+   //dareCoin.reveal.sendTransaction( ""+value, salt, {from: myAccount, value: 0}, function(error, ethResult){
       // handle the result of the transaction here
-      console.log(error, ethResult)
+      //  console.log(error, ethResult)
 
-   })
+  // })
 }
 
-//Function connected to smart contract
-  // var Array = [ $("#Inputvalue"), $("#Input2vale")];
+//Function connected to smart contract\
 function OnceClicked(){
 
   $("#betUp").on('click', function(){
     commitToDareCoin(1);
     //disable both button and enable reveal
-     document.getElementById(".bet").disabled = true;
-      document.getElementById("#reveal").enabled = true;
+    //document.getElementById(".bet").disabled = true;
+    //document.getElementById("#reveal").enabled = true;
   })
 
   $("#betDown").on('click', function(){
     commitToDareCoin(0);
-      //disable both button and enable reveal
-     document.getElementById(".bet").disabled = true;
-     document.getElementById("#reveal").enable = true;
-
-
+    //disable both button and enable reveal
+    //document.getElementById(".bet").disabled = true;
+    //document.getElementById("#reveal").enabled = true;
   })
 };
 
