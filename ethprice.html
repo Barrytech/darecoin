@@ -109,7 +109,7 @@ Here starts the code for the user interaction interface beside the navbar -->
   <div class="col-md-3"></div>
 </div>
 
-<br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br>
+<br> <br><br> <br><br> <br><br> <br><br> <br><br>
 
 <div  class="row">
     <div class="col-md-4"></div>
@@ -139,6 +139,7 @@ var makerDAOReaderABI = "https://raw.githubusercontent.com/makerdao/feeds/master
 var makerDAOAddress = "0xE39451e34f8FB108a8F6d4cA6C68dd38f37d26E3"; // on rinkeby
 var dareCoinABI = "https://raw.githubusercontent.com/Barrytech/prescript-playground/master/build/contracts/Darecoin.json";
 
+var globalValue;
 var salt = genSalt();
 
 function getTimeFromSeconds(timeInSecs){
@@ -210,6 +211,8 @@ function updateMakerDAOPrice(){
 
 function commitToDareCoin(value){
 
+  globalValue = value;
+
   // calculate a bytes32 to pass into `commit()`
   var hashCommit = web3.sha3("" + value + salt);
 
@@ -231,40 +234,51 @@ function commitToDareCoin(value){
       , function(error, ethResult) {
 
         // handle the result of the transaction here
-        console.log(error, ethResult);
-
-        // enable the reveal button to show
+        console.log("txHash: "  + ethResult);
 
         // disable the commit button
+        $(".bet").attr("disabled", true);
+
+        // TODO: consider waiting for transaction result to come back here,
+        // before enabling the reveal button
+        $("#reveal").attr("disabled", false);
       })
     })
   }
 };
 
-function revealToDareCoin(value, salt){
+function revealToDareCoin(value){
 
-   //dareCoin.reveal.sendTransaction( ""+value, salt, {from: myAccount, value: 0}, function(error, ethResult){
-      // handle the result of the transaction here
+  var theValue = "" + value;
+  var theSalt = salt;
+
+  console.log("TODO: implement revealToDareCoin..")
+  console.log("theValue: " + theValue);
+  console.log("theSalt: " + theSalt);
+
+  // dareCoin.reveal.sendTransaction( theValue, theSalt
+  //                                , {from: myAccount, value: 0}
+  //                                , function(error, ethResult){
+      //  handle the result of the transaction here
       //  console.log(error, ethResult)
-
-  // })
+      // })
 }
 
 //Function connected to smart contract\
 function OnceClicked(){
 
+  $("#reveal").attr("disabled", true);
+
   $("#betUp").on('click', function(){
     commitToDareCoin(1);
-    //disable both button and enable reveal
-    //document.getElementById(".bet").disabled = true;
-    //document.getElementById("#reveal").enabled = true;
   })
 
   $("#betDown").on('click', function(){
     commitToDareCoin(0);
-    //disable both button and enable reveal
-    //document.getElementById(".bet").disabled = true;
-    //document.getElementById("#reveal").enabled = true;
+  })
+
+  $("#reveal").on('click', function(){
+    revealToDareCoin(globalValue);
   })
 };
 
