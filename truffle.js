@@ -9,6 +9,12 @@ module.exports = {
       network_id: 4,
       gas: 4992222,
       gasPrice: 22000000000 // Specified in Wei
+    },
+    mainnet: {
+      provider: new HDWalletProvider(mnemonic, "https://mainnet.infura.io/"),
+      network_id: 4,
+      gas: 4992222,
+      gasPrice: 22000000000 // Specified in Wei
     }
   }
 };

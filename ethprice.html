@@ -34,7 +34,7 @@
 
     </tr>
     <tr>
-      <th class="labels">MakerDaoPrice:</th>
+      <th class="labels">MakerDaoPrice (REP/USD):</th>
       <th aligh="right" id="mkprice" class="results" style= "color: red; font-size: 20px; font-weight:bolder">      </th>
 
     </tr>
@@ -89,17 +89,35 @@
       </div>
 
 </nav>
+<!--
+Here starts the code for the user interaction interface beside the navbar -->
 
-<div id="choose">
-    <form>
-      <option id="betnow" value="Choose"> Choose</option>
-        <option id="betUp" value="Up"> Up</option>
-        <option id="betDown" value="Down"> Down</option>
-    </form>
+<h1> Hello World! Welcome to Darecoin now choose your bet</h1>
+<br> <br>
+<div id="choose" style="" class="row">
+  <div class="col-md-3"></div>
+    <div class="col-md-3">
+    <button id="betUp" value="Up" class="btn btn-lg btn-primary bet"> Up
+<!-- put an icon here -->
+     </button>
+  </div>
+  <div class="col-md-3">
+    <button id="betDown" value="Down" class="btn btn-lg btn-primary bet"> Down
+<!-- put an icon here -->
+    </button>
+  </div>
+  <div class="col-md-3"></div>
 </div>
 
-<br> <br>
+<br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br>
 
+<div  class="row">
+    <div class="col-md-4"></div>
+    <div class ="col-md-4">
+    <button id="reveal" class="btn  btn-lg btn-success disabled" disabeled= "disabled" > Reveal </button>
+  </div>
+      <div class="col-md-4"></div>
+</div>
 
 
 
@@ -113,12 +131,20 @@
 
 
 
+function genSalt(){
+  var array = new Uint32Array(1);
+  window.crypto.getRandomValues(array);
+  return array[0].toString(16);
+}
+
 /* global $ */
 var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
 var makerDAOReaderABI = "https://raw.githubusercontent.com/makerdao/feeds/master/src/abi/readable.json";
-var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
-
+//var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
+var makerDAOAddress = "0xE39451e34f8FB108a8F6d4cA6C68dd38f37d26E3"; // on rinkeby
 var dareCoinABI = "https://raw.githubusercontent.com/Barrytech/prescript-playground/master/build/contracts/Darecoin.json";
+
+var salt = genSalt();
 
 function getTimeFromSeconds(timeInSecs){
     // API returns in seconds, but Date needs milliseconds
@@ -155,7 +181,7 @@ function updateBalance(){
   if(web3.eth.accounts.length < 1){
     console.log("You don't have an account yet");
      // TODO: update the DOM to tell the user that they need an account
-    $('#bal').html("You don't have an account yet!");;
+    $('#bal').html("You don't have an account yet!");
   } else {
     var myAccount = web3.eth.accounts[0];
     web3.eth.getBalance(myAccount, function(err, balance){
@@ -189,7 +215,13 @@ function updateMakerDAOPrice(){
 
 function commitToDareCoin(value){
 
-  var hashCommit = web3.sha3(value);
+  // calculate a bytes32 to pass into `commit()`
+  var hashCommit = web3.sha3("" + value + salt);
+
+  console.log("value: " + value);
+  console.log("salt: " + salt);
+  console.log("hashCommit: " + hashCommit);
+
   //send to smartcontract for verification
   if(web3.eth.accounts.length < 1){
     console.log("You don't have an account yet");
@@ -201,12 +233,29 @@ function commitToDareCoin(value){
     var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
     dareCoin.commit.sendTransaction( hashCommit,
       { from: myAccount, value: 100000000000000000 }
-      , function(error, ethResult) { // 'peek' is now a function!
-        console.log(error, ethResult)
+      , function(error, ethResult) {
+
+        // handle the result of the transaction here
+        console.log(error, ethResult);
+
+        // enable the reveal button to show
+
+        // disable the commit button
       })
     })
   }
 };
+
+function revealToDareCoin(value, salt){
+
+
+   dareCoin.reveal.sendTransaction( ""+value, salt, {from: myAccount, value: 0}, function(error, ethResult){
+
+      // handle the result of the transaction here
+      console.log(error, ethResult)
+
+   })
+}
 
 //Function connected to smart contract
   // var Array = [ $("#Inputvalue"), $("#Input2vale")];
@@ -214,10 +263,18 @@ function OnceClicked(){
 
   $("#betUp").on('click', function(){
     commitToDareCoin(1);
+    //disable both button and enable reveal
+     document.getElementById(".bet").disabled = true;
+      document.getElementById("#reveal").enabled = true;
   })
 
   $("#betDown").on('click', function(){
     commitToDareCoin(0);
+      //disable both button and enable reveal
+     document.getElementById(".bet").disabled = true;
+     document.getElementById("#reveal").enable = true;
+
+
   })
 };
 
@@ -225,7 +282,7 @@ function OnceClicked(){
 $('document').ready(function(){
   updatePrice();
   updateBalance();
-  //updateMakerDAOPrice();
+  updateMakerDAOPrice();
   OnceClicked();
 });
 
