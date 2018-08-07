@@ -92,21 +92,12 @@
 
 </nav>
 
-<!-- <div id="input-form" >
- <form>
-      <div class="input-group  input-sm" style="width: 400px; position:center">
-        <input type="text" class="form-control" placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-primary" type="submit"> Submit
-          </button>
-        </div>
-         </div>
-
-    </form>
-    </div> -->
 <div id="choose">
-<input id="userbet">
-  <button type="submit">Submit</button>
+    <form>
+      <option id="betnow" value="Choose"> Choose</option>
+        <option id="betUp" value="Up"> Up</option>
+        <option id="betDown" value="Down"> Down</option>
+    ß</form>
 </div>
 
 <br> <br>
@@ -188,6 +179,8 @@ function updateMakerDAOPrice(){
 
         // TODO: insert this to the DOM
 
+
+
         console.log("Price is: " + price);
         $("#mkprice").html(" <strong>" + "$" + price + "</strong>");
       })
@@ -197,12 +190,29 @@ function updateMakerDAOPrice(){
   setTimeout(updateMakerDAOPrice, 10000);
 }
 
+
+//Function connected to smart contract
+  // var Array = [ $("#Inputvalue"), $("#Input2vale")];
+function OnceClicked(){
+
+    $("#betUp").on('click' function(){
+
+}
+
+    $("#betDown").on('click' function(){
+
+    }
+
+}
+
+
+
 // this gets called when the webpage has loaded
 $('document').ready(function(){
-
   updatePrice();
   updateBalance();
   updateMakerDAOPrice();
+  OnceClicked();
 });
 
 </script>
