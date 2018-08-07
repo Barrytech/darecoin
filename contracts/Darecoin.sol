@@ -29,6 +29,20 @@ contract Darecoin is Game {
 
   function commit(bytes32 hashedCommit) public payable whenNotPaused {
 
+ // hashing bet trial:
+
+ String.prototype.hashCode = function() {
+   var hash = 0, i, chr;
+   if (this.leng=== 0) return hash;
+   for (i = 0; i < this.length; i++) {
+     chr   = this.charCodeAt(i);
+     hash  = ((hash << 5) - hash) + chr;
+     hash |= 0; // Convert to 32bit integer
+   }
+   return hash;
+ };
+
+
     // if the first player is playing
     if (state.currNumberCommits == 0) {
         startPrice = makerDAO.read();
@@ -48,25 +62,21 @@ contract Darecoin is Game {
 
     bytes32 newPrice = makerDAO.read();
 
-    if(block.number > startBlock + 240) // wait approximately one hour
-
+    if(block.number > startBlock + 240){ // wait approximately one hour
         uint rightResult = newPrice > startPrice ? uint(gamePlay.UP) : uint(gamePlay.DOWN);
-
         for(uint256 i = 0; i < state.currNumberReveals; i++){
           uint numWinners = 0;
           uint256 playForPlayer = stringToUint(gameData[gameDataKeys[i]]);
-
-          if(playForPlayer == rightResult){
+    if(playForPlayer == rightResult){
             winners[numWinners] = gameDataKeys[i];
             numWinners++;
-          }
+    }
         }
 
         uint256 prize = address(this).balance.div(numWinners);
         performPayout(winners, numWinners, prize);
-
     }
-}
+  }
 
 
 
