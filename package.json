@@ -21,6 +21,7 @@
     "purescript": "^0.11.7",
     "react": "^0.14.7",
     "react-dom": "^0.14.6",
+    "truffle-hdwallet-provider": "0.0.6",
     "web3": "^1.0.0-beta.34"
   },
   "devDependencies": {
