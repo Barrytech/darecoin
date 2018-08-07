@@ -15,7 +15,7 @@ Dear all, games should inherit form this contract because this contract has the 
 The specific game will have to only define two functions:
 
 -- guessCheck(string guess): the function has to error out in if the guess is not compliant with the rules
--- findWinners(): the function determined the winners and distributes the payouts. 
+-- findWinners(): the function determined the winners and distributes the payouts.
 
 */
 
@@ -29,7 +29,7 @@ contract Game is Pausable, GameHelper {
     using SafeMath for uint256;
 
     uint256 public birthBlock = block.number;
-    
+
     enum GameState {COMMIT_STATE, REVEAL_STATE, PAYOUT_STATE}
 
     // This is the idea.
@@ -44,7 +44,6 @@ contract Game is Pausable, GameHelper {
     }
 
     struct Config {
-
         address FEE_ADDRESS;
         uint256 GAME_FEE_PERCENT;
         uint256 STAKE_SIZE;
@@ -82,7 +81,7 @@ contract Game is Pausable, GameHelper {
         address _feeAddress,
         uint256 _gameFeePercent,
         uint256 _stakeSize,
-        uint256 _maxp, 
+        uint256 _maxp,
         uint256 _gameStageLength,
         address _nptAddress) public {
 
@@ -219,12 +218,12 @@ contract Game is Pausable, GameHelper {
     */
 
     function commit(bytes32 hashedCommit) public payable whenNotPaused {
-        
+
         require(state.gameState == GameState.COMMIT_STATE);
 
         require(msg.value == config.STAKE_SIZE);
 
-        //Make sure this is first and only commit. 
+        //Make sure this is first and only commit.
         require(commits[msg.sender] == bytes32(0x0));
 
         commits[msg.sender] = hashedCommit;
@@ -248,9 +247,9 @@ contract Game is Pausable, GameHelper {
     }
 
     function reveal(string guess, string random) public whenNotPaused {
-        
+
         require(state.gameState == GameState.REVEAL_STATE);
-        
+
         // Function checks if the guess fits the requirement of the game
         checkGuess(guess);
 
@@ -292,18 +291,18 @@ contract Game is Pausable, GameHelper {
         require(state.gameState == GameState.PAYOUT_STATE);
         findWinners();
         toCommitState();
-    } 
+    }
 
-    /* 
+    /*
         Function resets the game contract state to deployment state.
         This is an emergency function.
     */
-    function resetGame() public onlyOwner whenNotPaused {  
-        
+    function resetGame() public onlyOwner whenNotPaused {
+
         toCommitState();
 
         info.lastPrize = 0;
-        
+
         for (uint256 i = 0; i < info.lastWinnersLength; i++){
             delete info.lastWinners[i];
         }
@@ -314,7 +313,7 @@ contract Game is Pausable, GameHelper {
 
 
 
-    /* 
+    /*
         Function parforms a payout of money to the winners.
         The function has to be called by the child contract once the winners are found
         i.e the function has to be called in the end of findWinners().
@@ -323,20 +322,20 @@ contract Game is Pausable, GameHelper {
     function performPayout(address[] winners, uint256 numWinners, uint256 prize) internal {
         info.lastWinnersLength = numWinners;
         for(uint256 i = 0; i < numWinners; i++){
-            winners[i].transfer(prize); 
+            winners[i].transfer(prize);
             info.lastWinners[i] = winners[i];
             info.lastWinningGuess = gameData[winners[i]];
         }
         info.lastPrize = prize;
-    } 
+    }
 
 
 
 
 
-    /* 
+    /*
         These are the abstract functions that the inheriting game
-        contracts will have to define. 
+        contracts will have to define.
     */
     function checkGuess(string guess) private;
     function findWinners() private;
@@ -374,7 +373,7 @@ contract Game is Pausable, GameHelper {
         for(uint256 i = 0; i < state.currNumberCommits; i++){
             delete commits[commitsKeys[i]];
         }
-        
+
         state.currNumberCommits = 0;
         state.currNumberReveals = 0;
 

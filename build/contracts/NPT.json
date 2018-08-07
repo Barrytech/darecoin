@@ -530,14 +530,14 @@
     "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/NPT.sol",
     "exportedSymbols": {
       "NPT": [
-        1587
+        1588
       ]
     },
-    "id": 1588,
+    "id": 1589,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1574,
+        "id": 1575,
         "literals": [
           "solidity",
           "^",
@@ -550,10 +550,10 @@
       {
         "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/RBACMintableToken.sol",
         "file": "./RBACMintableToken.sol",
-        "id": 1575,
+        "id": 1576,
         "nodeType": "ImportDirective",
-        "scope": 1588,
-        "sourceUnit": 1879,
+        "scope": 1589,
+        "sourceUnit": 1880,
         "src": "26:33:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -564,55 +564,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1576,
+              "id": 1577,
               "name": "RBACMintableToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1878,
+              "referencedDeclaration": 1879,
               "src": "77:17:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RBACMintableToken_$1878",
+                "typeIdentifier": "t_contract$_RBACMintableToken_$1879",
                 "typeString": "contract RBACMintableToken"
               }
             },
-            "id": 1577,
+            "id": 1578,
             "nodeType": "InheritanceSpecifier",
             "src": "77:17:7"
           }
         ],
         "contractDependencies": [
           95,
-          354,
-          386,
-          1572,
-          1663,
-          1830,
-          1878,
-          2289
+          355,
+          387,
+          1573,
+          1664,
+          1831,
+          1879,
+          2290
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1587,
+        "id": 1588,
         "linearizedBaseContracts": [
-          1587,
-          1878,
-          1830,
-          1572,
-          1663,
-          2289,
+          1588,
+          1879,
+          1831,
+          1573,
+          1664,
+          2290,
           95,
-          354,
-          386
+          355,
+          387
         ],
         "name": "NPT",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 1580,
+            "id": 1581,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 1587,
+            "scope": 1588,
             "src": "101:42:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -621,7 +621,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1578,
+              "id": 1579,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "101:6:7",
@@ -633,7 +633,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e617368506f696e7473",
-              "id": 1579,
+              "id": 1580,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -652,10 +652,10 @@
           },
           {
             "constant": true,
-            "id": 1583,
+            "id": 1584,
             "name": "symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 1587,
+            "scope": 1588,
             "src": "149:37:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -664,7 +664,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1581,
+              "id": 1582,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "149:6:7",
@@ -676,7 +676,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e5054",
-              "id": 1582,
+              "id": 1583,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -695,10 +695,10 @@
           },
           {
             "constant": true,
-            "id": 1586,
+            "id": 1587,
             "name": "decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 1587,
+            "scope": 1588,
             "src": "192:35:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -707,7 +707,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 1584,
+              "id": 1585,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "192:5:7",
@@ -719,7 +719,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3138",
-              "id": 1585,
+              "id": 1586,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -737,7 +737,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1588,
+        "scope": 1589,
         "src": "61:220:7"
       }
     ],
@@ -747,14 +747,14 @@
     "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/NPT.sol",
     "exportedSymbols": {
       "NPT": [
-        1587
+        1588
       ]
     },
-    "id": 1588,
+    "id": 1589,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1574,
+        "id": 1575,
         "literals": [
           "solidity",
           "^",
@@ -767,10 +767,10 @@
       {
         "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/RBACMintableToken.sol",
         "file": "./RBACMintableToken.sol",
-        "id": 1575,
+        "id": 1576,
         "nodeType": "ImportDirective",
-        "scope": 1588,
-        "sourceUnit": 1879,
+        "scope": 1589,
+        "sourceUnit": 1880,
         "src": "26:33:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -781,55 +781,55 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1576,
+              "id": 1577,
               "name": "RBACMintableToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1878,
+              "referencedDeclaration": 1879,
               "src": "77:17:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RBACMintableToken_$1878",
+                "typeIdentifier": "t_contract$_RBACMintableToken_$1879",
                 "typeString": "contract RBACMintableToken"
               }
             },
-            "id": 1577,
+            "id": 1578,
             "nodeType": "InheritanceSpecifier",
             "src": "77:17:7"
           }
         ],
         "contractDependencies": [
           95,
-          354,
-          386,
-          1572,
-          1663,
-          1830,
-          1878,
-          2289
+          355,
+          387,
+          1573,
+          1664,
+          1831,
+          1879,
+          2290
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1587,
+        "id": 1588,
         "linearizedBaseContracts": [
-          1587,
-          1878,
-          1830,
-          1572,
-          1663,
-          2289,
+          1588,
+          1879,
+          1831,
+          1573,
+          1664,
+          2290,
           95,
-          354,
-          386
+          355,
+          387
         ],
         "name": "NPT",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 1580,
+            "id": 1581,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 1587,
+            "scope": 1588,
             "src": "101:42:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -838,7 +838,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1578,
+              "id": 1579,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "101:6:7",
@@ -850,7 +850,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e617368506f696e7473",
-              "id": 1579,
+              "id": 1580,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -869,10 +869,10 @@
           },
           {
             "constant": true,
-            "id": 1583,
+            "id": 1584,
             "name": "symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 1587,
+            "scope": 1588,
             "src": "149:37:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -881,7 +881,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1581,
+              "id": 1582,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "149:6:7",
@@ -893,7 +893,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e5054",
-              "id": 1582,
+              "id": 1583,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -912,10 +912,10 @@
           },
           {
             "constant": true,
-            "id": 1586,
+            "id": 1587,
             "name": "decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 1587,
+            "scope": 1588,
             "src": "192:35:7",
             "stateVariable": true,
             "storageLocation": "default",
@@ -924,7 +924,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 1584,
+              "id": 1585,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "192:5:7",
@@ -936,7 +936,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3138",
-              "id": 1585,
+              "id": 1586,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -954,7 +954,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1588,
+        "scope": 1589,
         "src": "61:220:7"
       }
     ],
@@ -966,5 +966,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-07T16:52:56.283Z"
+  "updatedAt": "2018-08-07T21:20:29.600Z"
 }
