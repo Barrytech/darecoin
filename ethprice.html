@@ -16,81 +16,58 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-fixed">
-<div class="container-fluid">
-    <ul class="nav navbar-nav navbar-left">
-    <li><a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a></li>
-      <li><a href="#"><span> DARE-COIN </span></a></li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-5">
-
-  <div id="container">
-  <table width:"100%" id="table">
-
-    <tr>
-      <th class="labels">CoinMktPrice:</th>
-      <th aligh="right" id="price" class="results">      </th>
-
-    </tr>
-    <tr>
-      <th class="labels">MakerDaoPrice:</th>
-      <th aligh="right" id="mkprice" class="results" style= "color: red; font-size: 20px; font-weight:bolder">      </th>
-
-    </tr>
-
-      <th class="labels">%Change:</th>
-      <th aligh="right" id="change" class="results">      </th>
-
-    </tr>
-
-      <th class="labels">Daily:</th>
-      <th aligh="right" id="day" class="results">      </th>
-
-    </tr>
-
-      <th class="labels">Weekly:</th>
-      <th aligh="right" id="week" class="results">      </th>
-
-    </tr>
-
-      <th class="labels">Updated:</th>
-      <th aligh="right" id="moment" class="results">      </th>
-
-    </tr>
-
-  </table>
-  </div>
-</div>
+      <nav class="navbar navbar-fixed">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-left">
+                  <li><a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a></li>
+                  <li><a href="#"><span> DARE-COIN </span></a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div id="container">
+                    <table width:"100%" id="table">
+                        <tr>
+                            <th class="labels">CoinMktPrice:</th>
+                            <th aligh="right" id="price" class="results">     </th>
+                        </tr>
+                        <tr>
+                            <th class="labels">MakerDaoPrice:</th>
+                            <th aligh="right" id="mkprice" class="results" style= "color: red; font-size: 20px; font-weight:bolder">      </th>
+                        </tr>
+                        <tr>
+                            <th class="labels">%Change:</th>
+                            <th aligh="right" id="change" class="results">      </th>
+                        </tr>
+                    </div>
+                </div>
 <!-- //this is the wallet -->
-<div class="col-md-5" >
-  <div class="container-fluid">
-    <div class="nav navbar-nav navbar-right">
-      <form>
+                <div class="col-md-5" >
+                  <div class="container-fluid">
+                    <div class="nav navbar-nav navbar-right">
+                      <form>
+                        <label id="wallet_label">Wallet</label>
+                          <div>
+                            <a href="#"><span><img class="img-fluid rounded-circle"
+                              src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png"
+                              style="width: 25px; height: 25px;"></span>
+                            </a>
+                            <button id="bal" type="button" class="btn btn-info">Balance</button>
+                          </div>
+                          <div></div>
+                          <div id="coinbase"></div>
+                          <div id="original"></div>
+                          <div id="current"></div>
+                          <div id="diff"></div>
 
-      <label id="wallet_label">Wallet</label>
-      <div>
-        <a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a>
-      <button id="bal" type="button" class="btn btn-info">Balance</button>
-    </div>
-    </li>
-      <div></div>
-        <div id="coinbase"></div>
-        <div id="original"></div>
-        <div id="current"></div>
-        <div id="diff"></div>
-
-      </div>
-
-  </div>
-    </div>
+                    </div>
+                  </div>
+                </div>
     <!-- code for the wallet ends here!! -->
-        <div class="col-md-1"></div>
-      </div>
-
-</nav>
+                <div class="col-md-1"></div>
+              </div>
+    </nav>
 
 <div id="choose">
     <form>
@@ -197,40 +174,35 @@ function OnceClicked(){
       if(web3.eth.accounts.length < 1){
         console.log("You don't have an account yet");
       } else {
-        var myAccount = web3.eth.accounts[0];
-        $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
-          var dareCoin = web3.eth.contract(abi).at(dareCoinAddress); // create functions from the ABI
-          dareCoin.commit.sendTransaction( hashCommit,
-                                          { from: myAccount, value: 10000000000000 ETH }
-                                          , function(error, ethResult) { // 'peek' is now a function!
+              var myAccount = web3.eth.accounts[0];
+              $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
+              var dareCoin = web3.eth.contract(abi).at(dareCoinAddress); // create functions from the ABI
+              dareCoin.commit.sendTransaction( hashCommit,
+              { from: myAccount, value: 10000000000000 ETH }
+              , function(error, ethResult) { // 'peek' is now a function!
             // this is the result of the transaction
-          })
-        })
-      }
-
-
-}
+                })
+              })
+        }
+     }
 
     $("#betDown").on('click' function(){
       var hashCommit = web3.sha(0); // DOWN = 1
-
       //send to smartcontract for verification
       if(web3.eth.accounts.length < 1){
         console.log("You don't have an account yet");
       } else {
-        var myAccount = web3.eth.accounts[0];
-        $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
-          var dareCoin = web3.eth.contract(abi).at(dareCoinAddress); // create functions from the ABI
-          dareCoin.commit.sendTransaction( hashCommit,
-                                          { from: myAccount, value: 10000000000000 ETH }
-                                          , function(error, ethResult) { // 'peek' is now a function!
+              var myAccount = web3.eth.accounts[0];
+              $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
+                    var dareCoin = web3.eth.contract(abi).at(dareCoinAddress); // create functions from the ABI
+                    dareCoin.commit.sendTransaction( hashCommit,{ from: myAccount, value: 10000000000000 ETH }
+                    ,function(error, ethResult) { // 'peek' is now a function!
             // this is the result of the transaction
-          })
-        })
+                    })
+              })
       }
     }
 }
-
 
 
 // this gets called when the webpage has loaded
@@ -238,7 +210,7 @@ $('document').ready(function(){
   updatePrice();
   updateBalance();
   updateMakerDAOPrice();
-  //OnceClicked();
+  OnceClicked();
 });
 
 </script>
