@@ -3,10 +3,6 @@ dist: trusty
 node_js: stable
 sudo: required
 
-install:
-  - npm install
-script:
-
 deploy:
   provider: pages
   skip_cleanup: true
