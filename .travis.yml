@@ -4,9 +4,7 @@ node_js: stable
 sudo: required
 
 install:
-  - npm install -g bower
   - npm install
-  - bower install
 script:
   - npm run build
 

@@ -17,8 +17,6 @@
     "create-react-class": "^15.6.3",
     "http-server": "^0.11.1",
     "jquery": "^3.3.1",
-    "pulp": "^12.3.0",
-    "purescript": "^0.11.7",
     "react": "^0.14.7",
     "react-dom": "^0.14.6",
     "truffle-hdwallet-provider": "0.0.6",
