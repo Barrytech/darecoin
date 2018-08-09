@@ -231,7 +231,7 @@ contract Game is Pausable, GameHelper {
         state.currNumberCommits = state.currNumberCommits.add(1);
 
         //Issue nashpoints to committer
-        nashpoints.mint(msg.sender, 10);
+        // nashpoints.mint(msg.sender, 10);
 
         // Start the 'commit stage timer', to protect the players in case the
         // game master goes rogue

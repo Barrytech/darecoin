@@ -530,14 +530,14 @@
     "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/NPT.sol",
     "exportedSymbols": {
       "NPT": [
-        1944
+        1936
       ]
     },
-    "id": 1945,
+    "id": 1937,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1931,
+        "id": 1923,
         "literals": [
           "solidity",
           "^",
@@ -550,10 +550,10 @@
       {
         "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/RBACMintableToken.sol",
         "file": "./RBACMintableToken.sol",
-        "id": 1932,
+        "id": 1924,
         "nodeType": "ImportDirective",
-        "scope": 1945,
-        "sourceUnit": 2236,
+        "scope": 1937,
+        "sourceUnit": 2228,
         "src": "26:33:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -564,17 +564,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1933,
+              "id": 1925,
               "name": "RBACMintableToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2235,
+              "referencedDeclaration": 2227,
               "src": "77:17:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RBACMintableToken_$2235",
+                "typeIdentifier": "t_contract$_RBACMintableToken_$2227",
                 "typeString": "contract RBACMintableToken"
               }
             },
-            "id": 1934,
+            "id": 1926,
             "nodeType": "InheritanceSpecifier",
             "src": "77:17:10"
           }
@@ -583,23 +583,23 @@
           95,
           355,
           387,
-          1929,
-          2020,
-          2187,
-          2235,
-          2974
+          1921,
+          2012,
+          2179,
+          2227,
+          2966
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1944,
+        "id": 1936,
         "linearizedBaseContracts": [
-          1944,
-          2235,
-          2187,
-          1929,
-          2020,
-          2974,
+          1936,
+          2227,
+          2179,
+          1921,
+          2012,
+          2966,
           95,
           355,
           387
@@ -609,10 +609,10 @@
         "nodes": [
           {
             "constant": true,
-            "id": 1937,
+            "id": 1929,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 1944,
+            "scope": 1936,
             "src": "101:42:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -621,7 +621,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1935,
+              "id": 1927,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "101:6:10",
@@ -633,7 +633,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e617368506f696e7473",
-              "id": 1936,
+              "id": 1928,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -652,10 +652,10 @@
           },
           {
             "constant": true,
-            "id": 1940,
+            "id": 1932,
             "name": "symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 1944,
+            "scope": 1936,
             "src": "149:37:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -664,7 +664,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1938,
+              "id": 1930,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "149:6:10",
@@ -676,7 +676,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e5054",
-              "id": 1939,
+              "id": 1931,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -695,10 +695,10 @@
           },
           {
             "constant": true,
-            "id": 1943,
+            "id": 1935,
             "name": "decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 1944,
+            "scope": 1936,
             "src": "192:35:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -707,7 +707,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 1941,
+              "id": 1933,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "192:5:10",
@@ -719,7 +719,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3138",
-              "id": 1942,
+              "id": 1934,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -737,7 +737,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1945,
+        "scope": 1937,
         "src": "61:220:10"
       }
     ],
@@ -747,14 +747,14 @@
     "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/NPT.sol",
     "exportedSymbols": {
       "NPT": [
-        1944
+        1936
       ]
     },
-    "id": 1945,
+    "id": 1937,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1931,
+        "id": 1923,
         "literals": [
           "solidity",
           "^",
@@ -767,10 +767,10 @@
       {
         "absolutePath": "/Users/gitprooriginmaster/devel/purescript-playground/contracts/RBACMintableToken.sol",
         "file": "./RBACMintableToken.sol",
-        "id": 1932,
+        "id": 1924,
         "nodeType": "ImportDirective",
-        "scope": 1945,
-        "sourceUnit": 2236,
+        "scope": 1937,
+        "sourceUnit": 2228,
         "src": "26:33:10",
         "symbolAliases": [],
         "unitAlias": ""
@@ -781,17 +781,17 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1933,
+              "id": 1925,
               "name": "RBACMintableToken",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2235,
+              "referencedDeclaration": 2227,
               "src": "77:17:10",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RBACMintableToken_$2235",
+                "typeIdentifier": "t_contract$_RBACMintableToken_$2227",
                 "typeString": "contract RBACMintableToken"
               }
             },
-            "id": 1934,
+            "id": 1926,
             "nodeType": "InheritanceSpecifier",
             "src": "77:17:10"
           }
@@ -800,23 +800,23 @@
           95,
           355,
           387,
-          1929,
-          2020,
-          2187,
-          2235,
-          2974
+          1921,
+          2012,
+          2179,
+          2227,
+          2966
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1944,
+        "id": 1936,
         "linearizedBaseContracts": [
-          1944,
-          2235,
-          2187,
-          1929,
-          2020,
-          2974,
+          1936,
+          2227,
+          2179,
+          1921,
+          2012,
+          2966,
           95,
           355,
           387
@@ -826,10 +826,10 @@
         "nodes": [
           {
             "constant": true,
-            "id": 1937,
+            "id": 1929,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 1944,
+            "scope": 1936,
             "src": "101:42:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -838,7 +838,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1935,
+              "id": 1927,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "101:6:10",
@@ -850,7 +850,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e617368506f696e7473",
-              "id": 1936,
+              "id": 1928,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -869,10 +869,10 @@
           },
           {
             "constant": true,
-            "id": 1940,
+            "id": 1932,
             "name": "symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 1944,
+            "scope": 1936,
             "src": "149:37:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -881,7 +881,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 1938,
+              "id": 1930,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "149:6:10",
@@ -893,7 +893,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "4e5054",
-              "id": 1939,
+              "id": 1931,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -912,10 +912,10 @@
           },
           {
             "constant": true,
-            "id": 1943,
+            "id": 1935,
             "name": "decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 1944,
+            "scope": 1936,
             "src": "192:35:10",
             "stateVariable": true,
             "storageLocation": "default",
@@ -924,7 +924,7 @@
               "typeString": "uint8"
             },
             "typeName": {
-              "id": 1941,
+              "id": 1933,
               "name": "uint8",
               "nodeType": "ElementaryTypeName",
               "src": "192:5:10",
@@ -936,7 +936,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "3138",
-              "id": 1942,
+              "id": 1934,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -954,7 +954,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1945,
+        "scope": 1937,
         "src": "61:220:10"
       }
     ],
@@ -966,5 +966,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-09T16:49:40.431Z"
+  "updatedAt": "2018-08-09T17:00:35.287Z"
 }

@@ -70,7 +70,7 @@
         "id": 98,
         "nodeType": "ImportDirective",
         "scope": 313,
-        "sourceUnit": 1327,
+        "sourceUnit": 1319,
         "src": "26:20:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -239,10 +239,10 @@
               "id": 112,
               "name": "Game",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1326,
+              "referencedDeclaration": 1318,
               "src": "204:4:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Game_$1326",
+                "typeIdentifier": "t_contract$_Game_$1318",
                 "typeString": "contract Game"
               }
             },
@@ -252,10 +252,10 @@
           }
         ],
         "contractDependencies": [
-          1326,
-          1467,
-          2020,
-          2080
+          1318,
+          1459,
+          2012,
+          2072
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -263,10 +263,10 @@
         "id": 312,
         "linearizedBaseContracts": [
           312,
-          1326,
-          1467,
-          2080,
-          2020
+          1318,
+          1459,
+          2072,
+          2012
         ],
         "name": "Darecoin",
         "nodeType": "ContractDefinition",
@@ -526,10 +526,10 @@
                   "name": "Game",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1326,
+                  "referencedDeclaration": 1318,
                   "src": "636:4:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Game_$1326_$",
+                    "typeIdentifier": "t_type$_t_contract$_Game_$1318_$",
                     "typeString": "type(contract Game)"
                   }
                 },
@@ -907,7 +907,7 @@
                               "name": "block",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3310,
+                              "referencedDeclaration": 3302,
                               "src": "937:5:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_block",
@@ -972,7 +972,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3364,
+                        "referencedDeclaration": 3356,
                         "src": "961:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_Darecoin_$312",
@@ -986,7 +986,7 @@
                       "lValueRequested": false,
                       "memberName": "commit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 909,
+                      "referencedDeclaration": 901,
                       "src": "961:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$returns$__$",
@@ -1028,7 +1028,7 @@
                   "name": "whenNotPaused",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2041,
+                  "referencedDeclaration": 2033,
                   "src": "783:13:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1084,7 +1084,7 @@
             "scope": 312,
             "src": "730:262:1",
             "stateMutability": "payable",
-            "superFunction": 909,
+            "superFunction": 901,
             "visibility": "public"
           },
           {
@@ -1154,7 +1154,7 @@
                       "name": "stringToUint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1466,
+                      "referencedDeclaration": 1458,
                       "src": "1062:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_uint256_$",
@@ -1411,10 +1411,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3323,
-                        3324
+                        3315,
+                        3316
                       ],
-                      "referencedDeclaration": 3323,
+                      "referencedDeclaration": 3315,
                       "src": "1087:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1492,7 +1492,7 @@
             "scope": 312,
             "src": "996:173:1",
             "stateMutability": "nonpayable",
-            "superFunction": 1184,
+            "superFunction": 1176,
             "visibility": "private"
           },
           {
@@ -1735,7 +1735,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3310,
+                        "referencedDeclaration": 3302,
                         "src": "1320:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -2227,7 +2227,7 @@
                                   "name": "stringToUint",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 1466,
+                                  "referencedDeclaration": 1458,
                                   "src": "1584:12:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_uint256_$",
@@ -2666,7 +2666,7 @@
                                     "name": "this",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 3363,
+                                    "referencedDeclaration": 3355,
                                     "src": "1782:4:1",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_contract$_Darecoin_$312",
@@ -2729,7 +2729,7 @@
                             "lValueRequested": false,
                             "memberName": "div",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2682,
+                            "referencedDeclaration": 2674,
                             "src": "1774:25:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -2816,7 +2816,7 @@
                             "name": "performPayout",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1179,
+                            "referencedDeclaration": 1171,
                             "src": "1817:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_address_$dyn_memory_ptr_$_t_uint256_$_t_uint256_$returns$__$",
@@ -2870,7 +2870,7 @@
             "scope": 312,
             "src": "1173:696:1",
             "stateMutability": "nonpayable",
-            "superFunction": 1187,
+            "superFunction": 1179,
             "visibility": "private"
           }
         ],
@@ -2910,7 +2910,7 @@
         "id": 98,
         "nodeType": "ImportDirective",
         "scope": 313,
-        "sourceUnit": 1327,
+        "sourceUnit": 1319,
         "src": "26:20:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3079,10 +3079,10 @@
               "id": 112,
               "name": "Game",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1326,
+              "referencedDeclaration": 1318,
               "src": "204:4:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Game_$1326",
+                "typeIdentifier": "t_contract$_Game_$1318",
                 "typeString": "contract Game"
               }
             },
@@ -3092,10 +3092,10 @@
           }
         ],
         "contractDependencies": [
-          1326,
-          1467,
-          2020,
-          2080
+          1318,
+          1459,
+          2012,
+          2072
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -3103,10 +3103,10 @@
         "id": 312,
         "linearizedBaseContracts": [
           312,
-          1326,
-          1467,
-          2080,
-          2020
+          1318,
+          1459,
+          2072,
+          2012
         ],
         "name": "Darecoin",
         "nodeType": "ContractDefinition",
@@ -3366,10 +3366,10 @@
                   "name": "Game",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1326,
+                  "referencedDeclaration": 1318,
                   "src": "636:4:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Game_$1326_$",
+                    "typeIdentifier": "t_type$_t_contract$_Game_$1318_$",
                     "typeString": "type(contract Game)"
                   }
                 },
@@ -3747,7 +3747,7 @@
                               "name": "block",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3310,
+                              "referencedDeclaration": 3302,
                               "src": "937:5:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_block",
@@ -3812,7 +3812,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3364,
+                        "referencedDeclaration": 3356,
                         "src": "961:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_Darecoin_$312",
@@ -3826,7 +3826,7 @@
                       "lValueRequested": false,
                       "memberName": "commit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 909,
+                      "referencedDeclaration": 901,
                       "src": "961:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$returns$__$",
@@ -3868,7 +3868,7 @@
                   "name": "whenNotPaused",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2041,
+                  "referencedDeclaration": 2033,
                   "src": "783:13:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3924,7 +3924,7 @@
             "scope": 312,
             "src": "730:262:1",
             "stateMutability": "payable",
-            "superFunction": 909,
+            "superFunction": 901,
             "visibility": "public"
           },
           {
@@ -3994,7 +3994,7 @@
                       "name": "stringToUint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1466,
+                      "referencedDeclaration": 1458,
                       "src": "1062:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_uint256_$",
@@ -4251,10 +4251,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3323,
-                        3324
+                        3315,
+                        3316
                       ],
-                      "referencedDeclaration": 3323,
+                      "referencedDeclaration": 3315,
                       "src": "1087:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4332,7 +4332,7 @@
             "scope": 312,
             "src": "996:173:1",
             "stateMutability": "nonpayable",
-            "superFunction": 1184,
+            "superFunction": 1176,
             "visibility": "private"
           },
           {
@@ -4575,7 +4575,7 @@
                         "name": "block",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3310,
+                        "referencedDeclaration": 3302,
                         "src": "1320:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_block",
@@ -5067,7 +5067,7 @@
                                   "name": "stringToUint",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 1466,
+                                  "referencedDeclaration": 1458,
                                   "src": "1584:12:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_uint256_$",
@@ -5506,7 +5506,7 @@
                                     "name": "this",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 3363,
+                                    "referencedDeclaration": 3355,
                                     "src": "1782:4:1",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_contract$_Darecoin_$312",
@@ -5569,7 +5569,7 @@
                             "lValueRequested": false,
                             "memberName": "div",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2682,
+                            "referencedDeclaration": 2674,
                             "src": "1774:25:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -5656,7 +5656,7 @@
                             "name": "performPayout",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1179,
+                            "referencedDeclaration": 1171,
                             "src": "1817:13:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_address_$dyn_memory_ptr_$_t_uint256_$_t_uint256_$returns$__$",
@@ -5710,7 +5710,7 @@
             "scope": 312,
             "src": "1173:696:1",
             "stateMutability": "nonpayable",
-            "superFunction": 1187,
+            "superFunction": 1179,
             "visibility": "private"
           }
         ],
@@ -5726,5 +5726,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-09T16:49:40.424Z"
+  "updatedAt": "2018-08-09T17:00:35.271Z"
 }
