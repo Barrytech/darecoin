@@ -83,13 +83,13 @@ Here starts the code for the user interaction interface beside the navbar -->
 <div class="row">
   <div class="col-md-2"></div>
   <div class ="col-md-2 gamestate">
-    <button class="btn-lg btn-primary bet"> Step1: Commit Guess  </button>
+    <button class="btn btn-lg btn-primary bet" id="stp1"> Step1: Commit Guess  </button>
   </div>
-  <div class ="col-md-3">
-    <button class="btn-lg btn-primary bet"> Step2: Reveal Guess  </button>
+  <div class ="col-md-3 gamestate">
+    <button class="btn btn-lg btn-primary bet" id="stp2"> Step2: Reveal Guess  </button>
   </div>
-  <div class ="col-md-3">
-    <button class="btn-lg btn-primary bet"> Step3: Payouts  </button>
+  <div class ="col-md-3 gamestate">
+    <button class="btn btn-lg btn-primary bet" id="stp3"> Step3: Payouts  </button>
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -98,12 +98,12 @@ Here starts the code for the user interaction interface beside the navbar -->
 <div id="choose" class="row">
       <div class="col-md-3"></div>
       <div class="col-md-3">
-      <button id="betUp" value="Up" class="btn btn-lg btn-primary bet"> Up
+      <button id="betUp" value="Up" class=" btn-lg btn-success bet"> Up
     <!-- put an icon here -->
       </button>
       </div>
       <div class="col-md-3">
-      <button id="betDown" value="Down" class="btn btn-lg btn-primary bet"> Down
+      <button id="betDown" value="Down" class=" btn-lg btn-success bet"> Down
     <!-- put an icon here -->
       </button>
       </div>
@@ -115,7 +115,7 @@ Here starts the code for the user interaction interface beside the navbar -->
 <div class="row">
       <div class="col-md-4"></div>
       <div id ="played" class ="col-md-4">
-      <button id="reveal" class="btn btn-lg btn-success"> Reveal </button>
+      <button id="reveal" class="btn btn-lg btn-danger"> Reveal </button>
       </div>
       <div class="col-md-4"></div>
 </div>
