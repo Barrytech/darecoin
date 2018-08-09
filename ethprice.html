@@ -81,81 +81,82 @@ Here starts the code for the user interaction interface beside the navbar -->
 
 
 <div class="row">
+    <!-- splitting the page into two containers here wrapped as divs -->
+    <!-- this is the first section  taking 6 colomns-->
+    <div class="col-md-6">
+    <!--  This is a div that shows you where you are on the game.-->
+        <div class="row">
+            <h2 style="text-align: center">  Game State</h2>
+            <div class="col-md-2"></div>
+            <div class ="col-md-3 gamestate" id="statecommit" style="background-color: red">
+                <p id="stp1"  style="color:blue;
+                font-size: 40px;
+                font-style: italic;
+                font-family: fantasy;
+                font-weight: bold;"> Commit </p>
+            </div>
+            <div class ="col-md-3 gamestate" id="statereveal">
+                <p id="stp2" style="color:blue;
+                font-size: 40px;
+                font-style: italic;
+                font-family: fantasy;
+                font-weight: bold;"> Reveal  </p>
+            </div>
+            <div class ="col-md-3 gamestate" id="statepayouts" >
+                <p id="stp3"  style="color:blue;
+                font-size: 40px;
+                font-style: italic;
+                font-family: fantasy;
+                font-weight: bold;" > Payouts  </p>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br>
+        <!-- this button reset the game state to start over -->
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class ="col-md-4">
+            <button id="reset" class="bnt btn-md btn-info"> Reset </button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
 
-
-<div class="col-md-6">
-<!--  This is a div that shows you where you are on the game.-->
-<div class="row">
-  <h2 style="text-align: center">  Game State</h2>
-  <div class="col-md-2"></div>
-  <div class ="col-md-3 gamestate" id="statecommit" style="background-color: red">
-    <p id="stp1"  style="color:blue;
-    font-size: 40px;
-    font-style: italic;
-    font-family: fantasy;
-    font-weight: bold;"> Commit </p>
   </div>
-  <div class ="col-md-3 gamestate" id="statereveal">
-    <p id="stp2" style="color:blue;
-    font-size: 40px;
-    font-style: italic;
-    font-family: fantasy;
-    font-weight: bold;"> Reveal  </p>
+
+  <!-- this is the second section also taking 6 colomns-->
+  <!-- Play here -->
+
+  <div class="col-md-6">
+      <h2 style="text-align: center">  Play Here:</h2>
+      <div id="choose" class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <button id="betUp" value="Up" class=" btn-lg btn-success bet"> Up
+                <!-- put an icon here -->
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="betDown" value="Down" class=" btn-lg btn-success bet"> Down
+                <!-- put an icon here -->
+                </button>
+            </div>
+            <div class="col-md-3"></div>
+      </div>
+
+      <br> <br><br> <br><br> <br><br> <br><br> <br><br>
+
+      <div class="row">
+            <div class="col-md-4"></div>
+            <div id ="played" class ="col-md-4">
+            <button id="reveal" class="btn btn-lg btn-danger"> Reveal </button>
+            </div>
+            <div class="col-md-4"></div>
+      </div>
   </div>
-  <div class ="col-md-3 gamestate" id="statepayouts" >
-    <p id="stp3"  style="color:blue;
-    font-size: 40px;
-    font-style: italic;
-    font-family: fantasy;
-    font-weight: bold;" > Payouts  </p>
-  </div>
-  <div class="col-md-1"></div>
-</div>
-</div>
-<div class="col-md-1"></div>
 
-<!-- Play here -->
-<h2 style="text-align: center">  Play Here:</h2>
-<div class="col-md-6">
-<div id="choose" class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3">
-      <button id="betUp" value="Up" class=" btn-lg btn-success bet"> Up
-    <!-- put an icon here -->
-      </button>
-      </div>
-      <div class="col-md-3">
-      <button id="betDown" value="Down" class=" btn-lg btn-success bet"> Down
-    <!-- put an icon here -->
-      </button>
-      </div>
-      <div class="col-md-3"></div>
-</div>
 
-<br> <br><br> <br><br> <br><br> <br><br> <br><br>
-
-<div class="row">
-      <div class="col-md-4"></div>
-      <div id ="played" class ="col-md-4">
-      <button id="reveal" class="btn btn-lg btn-danger"> Reveal </button>
-      </div>
-      <div class="col-md-4"></div>
-</div>
-<br><br> <br><br>
 
 </div>
-<div class="col-md-1"></div>
-</div>
-
-<!-- this button reset the game state to start over -->
-<div class="row">
-      <div class="col-md-4"></div>
-      <div class ="col-md-4">
-      <button id="reset" class="bnt btn-md btn-info"> Reset </button>
-      </div>
-      <div class="col-md-4"></div>
-</div>
-<br><br> <br><br
 
 
 
@@ -313,9 +314,6 @@ function commitToDareCoin(value){
 };
 
 function resetGame(){
-  var theValue = "" + value;
-  var theSalt = salt;
-  globalValue = value;
 
   //send to smartcontract for verification
   if(web3.eth.accounts.length < 1){
@@ -327,9 +325,6 @@ function resetGame(){
       console.log("The address is: " + dareCoinAddress);
       var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
 
-      console.log("TODO: implement revealToDareCoin..");
-      console.log("theValue: " + theValue);
-      console.log("theSalt: " + theSalt);
 
       dareCoin.resetGame.sendTransaction({from: myAccount, value: 0, gas: 555555}, function(error, ethResult){
         //handle the result of the transaction here
@@ -405,7 +400,6 @@ $('document').ready(function(){
   updateMakerDAOPrice();
   updateGameState();
   OnceClicked();
-  resetGame();
 });
 
 </script>
