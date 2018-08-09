@@ -47,12 +47,11 @@ background-color: #FEE891;
 text-align: center;
 }
 .btn-lg{
-
    text-align: center;
    text-decoration: none;
    display: inline-block;
    font-size: 50px;
-   width: 350px;
+   width: 100px;
    border: solid;
 }
 
