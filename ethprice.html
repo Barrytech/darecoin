@@ -83,7 +83,7 @@ Here starts the code for the user interaction interface beside the navbar -->
 <div class="row">
   <h2 style="text-align: center">  Game State</h2>
   <div class="col-md-2"></div>
-  <div class ="col-md-3 gamestate">
+  <div class ="col-md-3 gamestate" id="statecommit" style="background-color: red">
     <p id="stp1"  style="color:blue;
     font-size: 40px;
     font-style: italic;
@@ -97,12 +97,12 @@ Here starts the code for the user interaction interface beside the navbar -->
     font-family: fantasy;
     font-weight: bold;"> Reveal  </p>
   </div>
-  <div class ="col-md-3 gamestate">
+  <div class ="col-md-3 gamestate" id="statepayouts" >
     <p id="stp3"  style="color:blue;
     font-size: 40px;
     font-style: italic;
     font-family: fantasy;
-    font-weight: bold;"> Payouts  </p>
+    font-weight: bold;" > Payouts  </p>
   </div>
   <div class="col-md-1"></div>
 </div>
@@ -251,7 +251,7 @@ function commitToDareCoin(value){
   globalValue = value;
 
   // calculate a bytes32 to pass into `commit()`
-  var hashCommit = web3.sha3("" + value + salt);
+  var hashCommit = new String(web3.sha3("" + value + salt));
 
   console.log("value: " + value);
   console.log("salt: " + salt);
@@ -265,7 +265,7 @@ function commitToDareCoin(value){
     $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
       var dareCoinAddress = abi.networks["4"].address;
       var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
-      dareCoin.commit.sendTransaction(hashCommit, {from: myAccount, value: 100000000000000000}, function (error, ethResult) {
+      dareCoin.commit.sendTransaction(hashCommit.valueOf(), {from: myAccount, value: 10000000000000000, gas: 555555}, function (error, ethResult) {
         // handle the result of the transaction here
         console.log("txHash: "  + ethResult);
         // disable the commit button
@@ -275,6 +275,8 @@ function commitToDareCoin(value){
         $("#reveal").attr("disabled", false);
         //highligh gamestate reveal
         $("#statereveal").css("background-color", "red");
+          $("#statecommit").css("background-color", "white");
+
 
       })
     })
@@ -305,6 +307,8 @@ function revealToDareCoin(value){
         console.log(error, ethResult);
         console.log("we pressed reveal");
         $("#played").html(" <h2>Thank you for your bet. <br> We have received you reveal <br> and are processing it</h2>");
+        $("#statereveal").css("background-color", "white");
+          $("#statepayouts").css("background-color", "red");
         // manipulate the DOM here accordingly
       })
     })
