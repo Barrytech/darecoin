@@ -302,7 +302,7 @@ function revealToDareCoin(value){
       console.log("theValue: " + theValue);
       console.log("theSalt: " + theSalt);
 
-      dareCoin.reveal.sendTransaction(theValue, theSalt, {from: myAccount, value: 0}, function(error, ethResult){
+      dareCoin.reveal.sendTransaction(theValue, theSalt, {from: myAccount, value: 0, gas: 555555}, function(error, ethResult){
         //handle the result of the transaction here
         console.log(error, ethResult);
         console.log("we pressed reveal");
