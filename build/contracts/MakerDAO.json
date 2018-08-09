@@ -254,8 +254,8 @@
         "contractDependencies": [
           1319,
           1460,
-          2013,
-          2073
+          1657,
+          1717
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -265,8 +265,8 @@
           313,
           1319,
           1460,
-          2073,
-          2013
+          1717,
+          1657
         ],
         "name": "Darecoin",
         "nodeType": "ContractDefinition",
@@ -907,7 +907,7 @@
                               "name": "block",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3303,
+                              "referencedDeclaration": 2288,
                               "src": "937:5:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_block",
@@ -972,7 +972,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3357,
+                        "referencedDeclaration": 2342,
                         "src": "961:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_Darecoin_$313",
@@ -1028,7 +1028,7 @@
                   "name": "whenNotPaused",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2034,
+                  "referencedDeclaration": 1678,
                   "src": "783:13:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1411,10 +1411,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3316,
-                        3317
+                        2301,
+                        2302
                       ],
-                      "referencedDeclaration": 3316,
+                      "referencedDeclaration": 2301,
                       "src": "1087:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1738,7 +1738,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3303,
+                            "referencedDeclaration": 2288,
                             "src": "1325:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -1829,10 +1829,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3316,
-                        3317
+                        2301,
+                        2302
                       ],
-                      "referencedDeclaration": 3316,
+                      "referencedDeclaration": 2301,
                       "src": "1317:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2700,7 +2700,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3356,
+                              "referencedDeclaration": 2341,
                               "src": "1783:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_Darecoin_$313",
@@ -2763,7 +2763,7 @@
                       "lValueRequested": false,
                       "memberName": "div",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2675,
+                      "referencedDeclaration": 1991,
                       "src": "1775:25:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -3125,8 +3125,8 @@
         "contractDependencies": [
           1319,
           1460,
-          2013,
-          2073
+          1657,
+          1717
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -3136,8 +3136,8 @@
           313,
           1319,
           1460,
-          2073,
-          2013
+          1717,
+          1657
         ],
         "name": "Darecoin",
         "nodeType": "ContractDefinition",
@@ -3778,7 +3778,7 @@
                               "name": "block",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3303,
+                              "referencedDeclaration": 2288,
                               "src": "937:5:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_block",
@@ -3843,7 +3843,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 3357,
+                        "referencedDeclaration": 2342,
                         "src": "961:5:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_Darecoin_$313",
@@ -3899,7 +3899,7 @@
                   "name": "whenNotPaused",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2034,
+                  "referencedDeclaration": 1678,
                   "src": "783:13:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -4282,10 +4282,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3316,
-                        3317
+                        2301,
+                        2302
                       ],
-                      "referencedDeclaration": 3316,
+                      "referencedDeclaration": 2301,
                       "src": "1087:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4609,7 +4609,7 @@
                             "name": "block",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 3303,
+                            "referencedDeclaration": 2288,
                             "src": "1325:5:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_block",
@@ -4700,10 +4700,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        3316,
-                        3317
+                        2301,
+                        2302
                       ],
-                      "referencedDeclaration": 3316,
+                      "referencedDeclaration": 2301,
                       "src": "1317:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5571,7 +5571,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 3356,
+                              "referencedDeclaration": 2341,
                               "src": "1783:4:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_Darecoin_$313",
@@ -5634,7 +5634,7 @@
                       "lValueRequested": false,
                       "memberName": "div",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2675,
+                      "referencedDeclaration": 1991,
                       "src": "1775:25:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -5788,5 +5788,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-08-09T19:26:53.311Z"
+  "updatedAt": "2018-08-09T21:24:04.161Z"
 }

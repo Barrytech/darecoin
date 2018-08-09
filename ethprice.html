@@ -26,24 +26,24 @@
           <div id="container">
                 <table width:"100%" id="table">
                       <tr>
-                        <th class="labels">CoinMktPrice:</th>
-                        <th aligh="right" id="price" class="results">      </th>
+                          <th class="labels">CoinMktPrice:</th>
+                          <th aligh="right" id="price" class="results">      </th>
                       </tr>
                       <tr>
-                        <th class="labels">MakerDaoPrice (REP/USD):</th>
-                        <th aligh="right" id="mkprice" class="results" style= "color: red; font-size: 20px; font-weight:bolder">      </th>
+                          <th class="labels">MakerDaoPrice (REP/USD):</th>
+                          <th aligh="right" id="mkprice" class="results" style= "color: red; font-size: 20px; font-weight:bolder">     </th>
                       </tr>
-                        <th class="labels">%Change:</th>
-                        <th aligh="right" id="change" class="results">      </th>
+                          <th class="labels">%Change:</th>
+                          <th aligh="right" id="change" class="results">      </th>
                       </tr>
-                        <th class="labels">Daily:</th>
-                        <th aligh="right" id="day" class="results">      </th>
+                          <th class="labels">Daily:</th>
+                          <th aligh="right" id="day" class="results">      </th>
                       </tr>
-                        <th class="labels">Weekly:</th>
-                        <th aligh="right" id="week" class="results">      </th>
+                          <th class="labels">Weekly:</th>
+                          <th aligh="right" id="week" class="results">      </th>
                       </tr>
-                        <th class="labels">Updated:</th>
-                        <th aligh="right" id="moment" class="results">      </th>
+                          <th class="labels">Updated:</th>
+                          <th aligh="right" id="moment" class="results">      </th>
                       </tr>
                 </table>
           </div>
@@ -144,11 +144,10 @@ Here starts the code for the user interaction interface beside the navbar -->
 
 
 
-
-
 </body>
-</html>
 
+
+</html>
 <!-- CODE GOES BELOW -->
 
 <script>
@@ -192,7 +191,6 @@ function updatePrice(){
     $("#day").html( "<strong>" + daychange+ " %" + "</strong>" );
     $("#week").html( "<strong>" + weekchange+ " %" + "</strong>" );
     $("#moment").html( "<strong>" + dateAsString + "</strong>" );
-
 
   });
   // update every 5s
@@ -307,7 +305,7 @@ function commitToDareCoin(value){
       })
     })
   }
-};
+}
 
 function payout(){
 

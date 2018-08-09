@@ -59,7 +59,6 @@ h1{
 }
 h2{
   text-align: center;
-
 }
 p{
 color:blue;
@@ -71,5 +70,13 @@ position: relative;
 top: .33em;
 }
 .gamestate{
-  background-color: #BCBFC0;
+  /* background-color: #BCBFC0; */
+  width: 200px;
+  height: 100px;
+
+}
+button{
+  font-size: 40px;
+  font-family: fantasy;
+  font-weight: bold;"
 }
