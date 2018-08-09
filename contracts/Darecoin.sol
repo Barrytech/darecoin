@@ -45,7 +45,7 @@ import "./Game.sol";
     address[] memory winners = new address[](config.MAX_PLAYERS);
     bytes32 newPrice = makerDAO.read();
 
-    if(block.number > startBlock + 240){ // wait approximately one hour
+    require(block.number > startBlock + 20); // wait approximately 5 min
     uint rightResult = newPrice > startPrice ? uint(gamePlay.UP) : uint(gamePlay.DOWN);
     for(uint256 i = 0; i < state.currNumberReveals; i++){
     uint numWinners = 0;
@@ -57,6 +57,5 @@ import "./Game.sol";
       }
     uint256 prize = address(this).balance.div(numWinners);
     performPayout(winners, numWinners, prize);
-    }
   }
 }

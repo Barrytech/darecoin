@@ -118,6 +118,9 @@ Here starts the code for the user interaction interface beside the navbar -->
             <div class ="col-md-4">
             <button id="reset" class="bnt btn-md btn-info"> Reset </button>
             </div>
+            <div class ="col-md-4">
+            <button id="payout" class="bnt btn-md btn-info"> Payout </button>
+            </div>
             <div class="col-md-4"></div>
         </div>
 
@@ -313,6 +316,30 @@ function commitToDareCoin(value){
   }
 };
 
+function payout(){
+
+  //send to smartcontract for verification
+  if(web3.eth.accounts.length < 1){
+    console.log("You don't have an account yet");
+  } else {
+    var myAccount = web3.eth.accounts[0];
+    $.ajax(dareCoinABI, {dataType: 'json'}).done(function(abi){
+      var dareCoinAddress = abi.networks["4"].address;
+      console.log("The address is: " + dareCoinAddress);
+      var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
+
+
+      dareCoin.payout.sendTransaction({from: myAccount, value: 0, gas: 555555}, function(error, ethResult){
+        //handle the result of the transaction here
+        console.log(error, ethResult);
+        console.log("we pressed reset");
+        // manipulate the DOM here accordingly
+
+      })
+    })
+  }
+}
+
 function resetGame(){
 
   //send to smartcontract for verification
@@ -325,6 +352,9 @@ function resetGame(){
       console.log("The address is: " + dareCoinAddress);
       var dareCoin = web3.eth.contract(abi.abi).at(dareCoinAddress); // create functions from the ABI
 
+      // dareCoin.owner.call(0, {from: myAccount}, function(error, owner){
+      //   if owner == web3.eth.accounts[0];
+      // }
 
       dareCoin.resetGame.sendTransaction({from: myAccount, value: 0, gas: 555555}, function(error, ethResult){
         //handle the result of the transaction here
@@ -389,6 +419,10 @@ function OnceClicked(){
   })
   $("#reset").on('click', function(){
     resetGame();
+  })
+
+  $("#payout").on('click', function(){
+    payout();
   })
 
 };
