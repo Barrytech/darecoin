@@ -76,22 +76,35 @@
 <!--
 Here starts the code for the user interaction interface beside the navbar -->
 
-<h1> Hello World! Welcome to Darecoin now choose your bet</h1>
-<br> <br> <br> <br>
+<h1> Welcome to Darecoin, now choose your bet</h1>
+<br> <br>
 
 <!--  This is a div that shows you where you are on the game.-->
 <div class="row">
+  <h2 style="text-align: center">  Game State</h2>
   <div class="col-md-2"></div>
-  <div class ="col-md-2 gamestate">
-    <button class="btn btn-lg btn-primary bet" id="stp1"> Step1: Commit Guess  </button>
+  <div class ="col-md-3 gamestate">
+    <p id="stp1"  style="color:blue;
+    font-size: 40px;
+    font-style: italic;
+    font-family: fantasy;
+    font-weight: bold;"> Commit </p>
+  </div>
+  <div class ="col-md-3 gamestate" id="statereveal">
+    <p id="stp2" style="color:blue;
+    font-size: 40px;
+    font-style: italic;
+    font-family: fantasy;
+    font-weight: bold;"> Reveal  </p>
   </div>
   <div class ="col-md-3 gamestate">
-    <button class="btn btn-lg btn-primary bet" id="stp2"> Step2: Reveal Guess  </button>
+    <p id="stp3"  style="color:blue;
+    font-size: 40px;
+    font-style: italic;
+    font-family: fantasy;
+    font-weight: bold;"> Payouts  </p>
   </div>
-  <div class ="col-md-3 gamestate">
-    <button class="btn btn-lg btn-primary bet" id="stp3"> Step3: Payouts  </button>
-  </div>
-  <div class="col-md-2"></div>
+  <div class="col-md-1"></div>
 </div>
 
 <br> <br><br> <br><br> <br>
@@ -260,6 +273,9 @@ function commitToDareCoin(value){
         // TODO: consider waiting for transaction result to come back here,
         // before enabling the reveal button
         $("#reveal").attr("disabled", false);
+        //highligh gamestate reveal
+        $("#statereveal").css("background-color", "red");
+
       })
     })
   }

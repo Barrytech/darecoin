@@ -59,15 +59,16 @@ h1{
   text-align: center;
 }
 h2{
-  font-size: 25px;
-}
-#stp1{
-  color: red;
-  padding: 15px 32px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 50px;
-  width: 400px;
 
+}
+p{
+color:#BCBFC0;
+font-size: 40px;
+font-style: italic;
+font-family: fantasy;
+font-weight: bold;
+}
+.gamestate{
+  background-color: #BCBFC0;
 }
