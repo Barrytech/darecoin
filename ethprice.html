@@ -48,17 +48,16 @@
                 </table>
           </div>
           </div>
-<!-- //this is the wallet -->
+<!-- this is the wallet -->
           <div class="col-md-5" >
               <div class="container-fluid">
                   <div class="nav navbar-nav navbar-right">
                         <form>
                               <label id="wallet_label">Wallet</label>
                               <div>
-                              <a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a>
-                              <button id="bal" type="button" class="btn btn-info">Balance</button>
+                                  <a href="#"><span><img class="img-fluid rounded-circle" src="https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png" style="width: 25px; height: 25px;"></span></a>
+                                  <button id="bal" type="button" class="btn btn-info">Balance</button>
                               </div>
-                               </li>
                               <div></div>
                               <div id="coinbase"></div>
                               <div id="original"></div>
@@ -73,8 +72,7 @@
   </div>
 
 </nav>
-<!--
-Here starts the code for the user interaction interface beside the navbar -->
+<!--Here starts the code for the user interaction interface beside the navbar -->
 
 <h1> Welcome to Darecoin, now choose your bet</h1>
 <br> <br>
@@ -83,60 +81,49 @@ Here starts the code for the user interaction interface beside the navbar -->
 <div class="container">
 
     <div class="row">
-        <div class="col-md-1"></div>
+
         <div class ="col-md-3 gamestate" id="statecommit" style="background-color: red">
-            <p id="stp1"  style="color:blue;
-            font-size: 40px;
-            font-style: italic;
-            font-family: fantasy;
-            font-weight: bold;"> Commit </p>
+            <p id="stp1"> Commit </p>
         </div>
-        <div class="col-md-3">
-            <button id="betUp" value="Up" class=" btn-lg btn-success bet"> Rise
+        <div class="col-md-4" >
+            <button id="betUp" value="Up" class=" btn-lg btn-success bet" style=" width: 400px"> Rise
                     <!-- put an icon here -->
             </button>
         </div>
-        <div class="col-md-3">
-            <button id="betDown" value="Down" class=" btn-lg btn-success bet"> Down
+          <div class="col-md-1"></div>
+        <div class="col-md-4" >
+            <button id="betDown" value="Down" class=" btn-lg btn-success bet" style=" width: 400px"> Down
             <!-- put an icon here -->
             </button>
         </div>
-        <div class="col-md-2"></div>
+
     </div>
 
     <div class="row">
-        <div class="col-md-1"></div>
+
         <div class ="col-md-3 gamestate" id="statereveal">
-            <p id="stp2" style="color:blue;
-                font-size: 40px;
-                font-style: italic;
-                font-family: fantasy;
-                font-weight: bold;"> Reveal
+            <p id="stp2"> Reveal
             </p>
         </div>
-        <div id ="played" class ="col-md-6">
-            <button id="reveal" class="btn btn-lg btn-danger"> Reveal </button>
+        <div id ="played" class ="col-md-9">
+            <button id="reveal" class="btn btn-lg btn-danger" style=" width: 890px"> Reveal </button>
         </div>
-        <div class="col-md-2"></div>
+        <
     </div>
 
     <div class="row">
-        <div class="col-md-1"></div>
+
 
         <div class ="col-md-3 gamestate" id="statepayouts" >
-            <p id="stp3"  style="color:blue;
-                font-size: 40px;
-                font-style: italic;
-                font-family: fantasy;
-                font-weight: bold;" > Payout
-            </p>
+            <p id="stp3"> Payout </p>
         </div>
 
             <div class ="col-md-4">
-                <button id="reset" class="bnt btn-md btn-info"> Reset </button>
+                <button id="reset" class="bnt btn-lg btn-info" style=" width: 400px"> Reset </button>
             </div>
+            <div class="col-md-1"></div>
             <div class ="col-md-4">
-                <button id="payout" class="bnt btn-md btn-info"> Payout </button>
+                <button id="payout" class="bnt btn-lg btn-info" style=" width: 400px"> Payout </button>
             </div>
     </div>
 
