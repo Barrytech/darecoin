@@ -129,6 +129,13 @@
 
 </div>
 
+<div class="container">
+
+
+
+
+</div>
+
 
 
 </body>
@@ -148,12 +155,14 @@ function genSalt(){
 /* global $ */
 var url = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
 var makerDAOReaderABI = "https://raw.githubusercontent.com/makerdao/feeds/master/src/abi/readable.json";
-//var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
-var makerDAOAddress = "0xE39451e34f8FB108a8F6d4cA6C68dd38f37d26E3"; // on rinkeby
+var makerDAOAddress = "0x729D19f657BD0614b4985Cf1D82531c67569197B"; // on ethereum mainnet
+//var makerDAOAddress = "0xE39451e34f8FB108a8F6d4cA6C68dd38f37d26E3"; // on rinkeby
 var dareCoinABI = "https://raw.githubusercontent.com/Barrytech/prescript-playground/master/build/contracts/Darecoin.json";
 
 var globalValue;
 var salt = genSalt();
+var oldPrice;
+var oldTime;
 
 function getTimeFromSeconds(timeInSecs){
   // API returns in seconds, but Date needs milliseconds
@@ -210,7 +219,11 @@ function updateMakerDAOPrice(){
         var price = web3.fromWei(web3.toDecimal(ethResult), 'ether');
 
         // TODO: insert this to the DOM
-        console.log("Price is: " + price);
+        if(oldPrice != price){
+          var theNow = new Date(window.Date.now());
+          console.log("New price!: " + price + " at " + theNow.toGMTString());
+        }
+        oldPrice = price;
         $("#mkprice").html(" <strong>" + "$" + price + "</strong>");
       })
     })
@@ -234,17 +247,23 @@ function updateGameState(){
         console.log("The gameState is: " + gameState);
 
         if(gameState == 0){
-          $("#statecommit").css("background-color", "red");
+          $("#statecommit").css("background-color", "#9E2424");
           $("#statereveal").css("background-color", "white");
           $("#statepayouts").css("background-color", "white");
+          $("#payout").attr("disabled", true);
         } else if (gameState == 1){
-          $("#statecommit").css("background-color", "grey");
-          $("#statereveal").css("background-color", "red");
+          $("#statecommit").css("background-color", "#E3E1E3");
+          $("#statereveal").css("background-color", "#9E2424");
           $("#statepayouts").css("background-color", "white");
+            $(".bet").attr("disabled", true);
+          $("#payout").attr("disabled", true);
         } else if (gameState == 2){
-          $("#statecommit").css("background-color", "grey");
-          $("#statereveal").css("background-color", "grey");
-          $("#statepayouts").css("background-color", "red");
+          $("#statecommit").css("background-color", "#E3E1E3");
+          $("#statereveal").css("background-color", "#E3E1E3");
+          $("#statepayouts").css("background-color", "#9E2424");
+          $(".bet").attr("disabled", true);
+          $("#reveal").attr("disabled", true);
+          $("#payout").attr("disabled", false);
         }
 
       })

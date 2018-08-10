@@ -13,7 +13,9 @@ import "./Game.sol";
 
     bytes32 private startPrice;
     uint startBlock;
+
   MakerDAO makerDAO = MakerDAO(0xE39451e34f8FB108a8F6d4cA6C68dd38f37d26E3); // rinkeby
+                         // 0x729D19f657BD0614b4985Cf1D82531c67569197B // mainnet
 
   constructor(
     address _feeAddress,
