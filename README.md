@@ -1,8 +1,8 @@
 # prescript-playground
 
-[![Build Status](https://travis-ci.org/Barrytech/prescript-playground.svg?branch=master)](https://travis-ci.org/Barrytech/prescript-playground)
+[![Build Status](https://travis-ci.org/Barrytech/darecoin.svg?branch=master)](https://travis-ci.org/Barrytech/darecoin)
 
-You can preview this application [here](http://barrytech.github.io/prescript-playground/ethprice.html)
+You can preview this application [here](http://barrytech.github.io/darecoin/)
 
 ## Description
 This is a game intended to be used on the Ethereum blockchain. The way it works would actually be similar to Kittykitten without kittens but coins only.
