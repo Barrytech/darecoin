@@ -9,7 +9,7 @@ import "./Game.sol";
 
   contract Darecoin is Game {
 
-    enum gamePlay {DOWN, UP} // DOWN = 0, UP = 1
+    enum gamePlay {DOWN, UP, NOCHANGE} // DOWN = 0, UP = 1, NOCHANGE = 2
 
     bytes32 private startPrice;
     uint startBlock;
@@ -48,7 +48,7 @@ import "./Game.sol";
     bytes32 newPrice = makerDAO.read();
 
     require(block.number > startBlock + 20); // wait approximately 5 min
-    uint rightResult = newPrice > startPrice ? uint(gamePlay.UP) : uint(gamePlay.DOWN);
+    uint rightResult = newPrice == startPrice ? uint(gamePlay.NOCHANGE) : (newPrice > startPrice ? uint(gamePlay.UP) : uint(gamePlay.DOWN));
     for(uint256 i = 0; i < state.currNumberReveals; i++){
     uint numWinners = 0;
     uint256 playForPlayer = stringToUint(gameData[gameDataKeys[i]]);
