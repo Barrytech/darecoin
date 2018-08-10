@@ -1,0 +1,12 @@
+language: node_js
+dist: trusty
+node_js: stable
+sudo: required
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: ./
+  on:
+  branch: master
