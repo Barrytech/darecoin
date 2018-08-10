@@ -1,4 +1,4 @@
-# prescript-playground
+# darecoin
 
 [![Build Status](https://travis-ci.org/Barrytech/darecoin.svg?branch=master)](https://travis-ci.org/Barrytech/darecoin)
 
