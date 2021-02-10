@@ -1,5 +1,4 @@
-pragma solidity ^0.4.23;
-
+pragma solidity ^0.8.1;
 import "./Game.sol";
 
 contract TwoThirdsAverage is Game {
