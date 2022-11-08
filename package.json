@@ -17,7 +17,7 @@
     "truffle-hdwallet-provider": "0.0.6"
   },
   "devDependencies": {
-    "webpack": "^1.12.9"
+    "webpack": "^5.74.0"
   },
   "repository": {
     "type": "git",
