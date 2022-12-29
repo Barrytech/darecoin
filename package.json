@@ -14,10 +14,10 @@
     "create-react-class": "^15.6.3",
     "http-server": "^0.11.1",
     "jquery": "^3.5.0",
-    "truffle-hdwallet-provider": "0.0.6"
+    "truffle-hdwallet-provider": "1.0.17"
   },
   "devDependencies": {
-    "webpack": "^1.12.9"
+    "webpack": "^5.75.0"
   },
   "repository": {
     "type": "git",
